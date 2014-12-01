@@ -64,6 +64,11 @@ public class Literals
     public static final String VERSION_L = "version";
 
     /**
+     * String literal: "dockerfile.version".
+     */
+    public static final String DOCKERFILE_VERSION = "dockerfile.version";
+
+    /**
      * String literal: "outputdir".
      */
     public static final String OUTPUT_DIR_L = "outputdir";

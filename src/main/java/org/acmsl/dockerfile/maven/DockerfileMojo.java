@@ -202,8 +202,6 @@ public class DockerfileMojo
 
         @Nullable final File outputDirPath = getOutputDir();
 
-        @Nullable final QueryJTask task;
-
         if  (outputDirPath != null)
         {
             //initialize directories
@@ -215,12 +213,7 @@ public class DockerfileMojo
                 log.warn("Cannot create output folder: " + outputDir);
             }
 
-            //execute task
-            task = buildTask(version, log);
-
-            log.info("Running QueryJ " + version);
-
-            task.execute();
+            log.info("Running Dockerfile Maven Plugin " + version);
 
             running = true;
         }
@@ -231,8 +224,8 @@ public class DockerfileMojo
 
         if (!running)
         {
-            log.error("NOT running QueryJ " + version);
-            throw new MojoExecutionException("QueryJ could not start");
+            log.error("NOT running Dockerfile Maven Plugin " + version);
+            throw new MojoExecutionException("Dockerfile Maven Plugin could not start");
         }
     }
 

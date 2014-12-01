@@ -39,7 +39,6 @@ import org.acmsl.commons.logging.UniqueLogFactory;
 /*
  * Importing some Maven classes.
  */
-import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.logging.Log;

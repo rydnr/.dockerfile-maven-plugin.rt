@@ -183,7 +183,7 @@ public class DockerfileMojo
         }
         else
         {
-            result = UNKNOWN_L;
+            result = Literals.UNKNOWN_L;
         }
 
         return result;

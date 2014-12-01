@@ -172,6 +172,7 @@ public class DockerfileMojo
      * @param properties the pom.properties information.
      * @return the version entry.
      */
+    @NotNull
     protected String retrieveVersion(@Nullable final Properties properties)
     {
         final String result;

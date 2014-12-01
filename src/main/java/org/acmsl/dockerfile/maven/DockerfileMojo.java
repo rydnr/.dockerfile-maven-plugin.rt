@@ -102,6 +102,57 @@ public class DockerfileMojo
     private File m__OutputDir;
 
     /**
+     * Specifies the output directory.
+     * @param outputDir such directory.
+     */
+    protected final void immutableSetOutputDir(@NotNull final File outputDir)
+    {
+        m__OutputDir = outputDir;
+    }
+
+    /**
+     * Specifies the output directory.
+     * @param outputDir such directory.
+     */
+    public void setOutputDir(@NotNull final File outputDir)
+    {
+        immutableSetOutputDir(outputDir);
+    }
+
+    /**
+     * Returns the output directory.
+     * @return such directory.
+     */
+    @Nullable
+    protected final File immutableGetOutputDir()
+    {
+        return m__OutputDir;
+    }
+
+    /**
+     * Returns the output directory.
+     * @return such directory.
+     */
+    @Nullable
+    public File getOutputDir()
+    {
+        final File result;
+
+        final String aux = System.getProperty(OUTPUT_DIR);
+
+        if (aux == null)
+        {
+            result = immutableGetOutputDir();
+        }
+        else
+        {
+            result = new File(aux);
+        }
+
+        return result;
+    }
+
+    /**
      * Executes Dockerfile Maven plugin.
      * @throws org.apache.maven.plugin.MojoExecutionException if the process fails.
      */

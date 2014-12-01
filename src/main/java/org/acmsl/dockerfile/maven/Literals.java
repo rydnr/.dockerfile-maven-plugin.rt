@@ -79,7 +79,7 @@ public class Literals
     public static final String DOCKERFILE_OUTPUTDIR = "dockerfile.outputdir";
 
     /**
-     * String literal: "Cannot read my own properties ".
+     * String literal: "Cannot read my own pom ".
      */
-    public static final String CANNOT_READ_MY_OWN_PROPERTIES = "Cannot read my own properties ";
+    public static final String CANNOT_READ_MY_OWN_POM = "Cannot read my own pom ";
 }

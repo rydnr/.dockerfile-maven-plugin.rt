@@ -48,12 +48,6 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Parameter;
 
 /*
- * Importing some Ant classes.
- */
-import org.apache.tools.ant.Project;
-import org.apache.tools.ant.types.Path;
-
-/*
  * Importing NotNull annotations.
  */
 import org.jetbrains.annotations.NotNull;

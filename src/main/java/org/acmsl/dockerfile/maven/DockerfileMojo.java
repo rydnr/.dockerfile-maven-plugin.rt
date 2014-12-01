@@ -86,7 +86,7 @@ public class DockerfileMojo
      * The location of pom.properties within the jar file.
      */
     protected static final String POM_PROPERTIES_LOCATION =
-        "META-INF/maven/org.acmsl.queryj/queryj-maven/pom.properties";
+        "META-INF/maven/org.acmsl/dockerfile-maven-plugin/pom.properties";
 
     /**
      * The output directory.

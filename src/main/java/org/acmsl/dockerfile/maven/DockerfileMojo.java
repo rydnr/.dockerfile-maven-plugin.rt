@@ -29,7 +29,7 @@
  *
  * Description: Executes Dockerfile plugin.
  */
-package org.acmsl.queryj.tools.maven;
+package org.acmsl.dockerfile.maven;
 
 /*
  * Importing some ACM-SL Java Commons classes.

@@ -131,7 +131,7 @@ public class DockerfileMojo
     {
         final File result;
 
-        final String aux = System.getProperty(Literals.DOCKERFILE_OUTPUTDIR);
+        final String aux = System.getProperty(Literals.DOCKERFILE_OUTPUT_DIR);
 
         if (aux == null)
         {

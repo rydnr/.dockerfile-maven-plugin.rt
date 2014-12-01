@@ -230,7 +230,7 @@ public class DockerfileMojo
     }
 
     /**
-     * Retrieves the pom.properties bundled within the QueryJ jar.
+     * Retrieves the pom.properties bundled within the Dockerfile Maven Plugin jar.
      * @param log the Maven log.
      * @return such information.
      */

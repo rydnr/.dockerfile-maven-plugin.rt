@@ -186,7 +186,7 @@ public class DockerfileMojo
         if (   (properties != null)
             && (properties.containsKey(VERSION_L)))
         {
-            result = properties.getProperty(VERSION_LITERAL);
+            result = properties.getProperty(DOCKERFILE_VERSION);
         }
         else
         {

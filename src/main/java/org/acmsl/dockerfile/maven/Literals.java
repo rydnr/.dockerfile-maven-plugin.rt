@@ -32,7 +32,7 @@
  * Date: 2014/12/01
  *
  */
-package org.acmsl.queryj.tools.maven;
+package org.acmsl.dockerfile.maven;
 
 /*
  * Importing checkthread.org annotations.

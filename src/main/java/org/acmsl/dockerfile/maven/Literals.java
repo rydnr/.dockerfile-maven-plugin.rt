@@ -66,7 +66,7 @@ public class Literals
     /**
      * String literal: "dockerfile.version".
      */
-    public static final String DOCKERFILE_VERSION = "dockerfile.version";
+    public static final String DOCKERFILE_VERSION = DOCKERFILE_L + ".version";
 
     /**
      * String literal: "outputdir".
@@ -76,7 +76,7 @@ public class Literals
     /**
      * String literal: "dockerfile.outputdir".
      */
-    public static final String DOCKERFILE_OUTPUT_DIR = "dockerfile.outputdir";
+    public static final String DOCKERFILE_OUTPUT_DIR = DOCKERFILE_L + ".outputdir";
 
     /**
      * String literal: "Cannot read my own pom ".

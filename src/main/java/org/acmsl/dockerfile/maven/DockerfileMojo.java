@@ -175,7 +175,7 @@ public class DockerfileMojo
     @NotNull
     protected String retrieveVersion(@Nullable final Properties properties)
     {
-        final String result;
+        @NotNull final String result;
 
         if (   (properties != null)
             && (properties.containsKey(Literals.VERSION_L)))

@@ -98,7 +98,7 @@ public class DockerfileMojo
     /**
      * The output directory.
      */
-    @Parameter (name = Literals.OUTPUT_DIR, property = OUTPUT_DIR, required = false, defaultValue = "${project.build.dir}")
+    @Parameter (name = Literals.OUTPUT_DIR_L, property = Literals.DOCKERFILE_OUTPUTDIR, required = false, defaultValue = "${project.build.dir}")
     private File m__OutputDir;
 
     /**

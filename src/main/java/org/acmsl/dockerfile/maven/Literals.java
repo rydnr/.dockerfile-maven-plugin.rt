@@ -76,7 +76,7 @@ public class Literals
     /**
      * String literal: "dockerfile.outputdir".
      */
-    public static final String DOCKERFILE_OUTPUTDIR = "dockerfile.outputdir";
+    public static final String DOCKERFILE_OUTPUT_DIR = "dockerfile.outputdir";
 
     /**
      * String literal: "Cannot read my own pom ".

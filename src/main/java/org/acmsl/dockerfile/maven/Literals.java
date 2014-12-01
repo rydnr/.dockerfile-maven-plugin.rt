@@ -79,7 +79,7 @@ public class Literals
     public static final String DOCKERFILE_OUTPUT_DIR = DOCKERFILE_L + ".outputdir";
 
     /**
-     * String literal: "Cannot read my own pom ".
+     * String literal: "Cannot read my own pom".
      */
-    public static final String CANNOT_READ_MY_OWN_POM = "Cannot read my own pom ";
+    public static final String CANNOT_READ_MY_OWN_POM = "Cannot read my own pom";
 }

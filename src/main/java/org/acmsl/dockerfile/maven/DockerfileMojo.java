@@ -91,7 +91,7 @@ public class DockerfileMojo
     /**
      * The output directory.
      */
-    @Parameter (name = Literals.OUTPUT_DIR_L, property = Literals.DOCKERFILE_OUTPUTDIR, required = false, defaultValue = "${project.build.dir}/META-INF/maven")
+    @Parameter (name = Literals.OUTPUT_DIR_L, property = Literals.OUTPUT_DIR_L, required = false, defaultValue = "${project.build.dir}/META-INF/maven")
     private File m__OutputDir;
 
     /**

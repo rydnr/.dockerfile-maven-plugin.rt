@@ -87,4 +87,14 @@ public class Literals
      * String literal: "source".
      */
     public static final String SOURCE_L = "source";
+
+    /**
+     * String literal: "org/acmsl/dockerfile".
+     */
+    public static final String ORG_ACMSL_DOCKERFILE = "org/acmsl/dockerfile";
+
+    /**
+     * String literal: "org/acmsl/dockerfile/Dockerfile.stg".
+     */
+    public static final String ORG_ACMSL_DOCKERFILE_STG = "org/acmsl/dockerfile/Dockerfile.stg";
 }

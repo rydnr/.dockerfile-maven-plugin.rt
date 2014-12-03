@@ -89,6 +89,11 @@ public class Literals
     public static final String SOURCE_L = "source";
 
     /**
+     * String literal: "contexc".
+     */
+    public static final String CONTEXT_L = "context";
+
+    /**
      * String literal: "org/acmsl/dockerfile".
      */
     public static final String ORG_ACMSL_DOCKERFILE = "org/acmsl/dockerfile";

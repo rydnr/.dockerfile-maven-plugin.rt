@@ -96,5 +96,5 @@ public class Literals
     /**
      * String literal: "org/acmsl/dockerfile/Dockerfile.stg".
      */
-    public static final String ORG_ACMSL_DOCKERFILE_STG = "org/acmsl/dockerfile/Dockerfile.stg";
+    public static final String ORG_ACMSL_DOCKERFILE_DOCKERFILE_STG = "org/acmsl/dockerfile/Dockerfile.stg";
 }

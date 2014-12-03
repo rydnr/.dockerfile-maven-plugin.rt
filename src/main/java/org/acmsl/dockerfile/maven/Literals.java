@@ -82,4 +82,9 @@ public class Literals
      * String literal: "Cannot read my own pom".
      */
     public static final String CANNOT_READ_MY_OWN_POM = "Cannot read my own pom";
+
+    /**
+     * String literal: "source".
+     */
+    public static final String SOURCE_L = "source";
 }

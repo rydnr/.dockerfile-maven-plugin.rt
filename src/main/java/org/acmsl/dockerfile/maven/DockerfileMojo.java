@@ -170,7 +170,7 @@ public class DockerfileMojo
         execute(
             log,
             retrieveOwnVersion(retrievePomProperties(log)),
-            retrieveTargetVersion(getPluginContext()));
+            retrieveTargetVersion(retrieveTargetProject()));
     }
 
     /**
@@ -197,29 +197,26 @@ public class DockerfileMojo
     }
 
     /**
-     * Retrieves the target version.
-     * @param pluginContext the context.
+     * Retrieves the target project.
      * @return such version.
      */
     @NotNull
-    protected String retrieveTargetVersion(@NotNull final Map<?, ?> pluginContext)
+    protected MavenProject retrieveTargetProject()
+    {
+        return this.session.getCurrentProject();
+    }
+
+    /**
+     * Retrieves the target version.
+     * @param project the target project.
+     * @return such version.
+     */
+    @NotNull
+    protected String retrieveTargetVersion(@NotNull final MavenProject project)
     {
         UniqueLogFactory.getLog(DockerfileMojo.class).info(pluginContext);
 
-        try
-        {
-            final Method getRequestMethod = this.session.getClass().getMethod("getRequest");
-            final Object mavenExecutionRequest = getRequestMethod.invoke(this.session);
-            final Method getThreadCountMethod = mavenExecutionRequest.getClass().getMethod("getThreadCount");
-            final String threadCount = (String) getThreadCountMethod.invoke(mavenExecutionRequest);
-            result  = Integer.valueOf(threadCount);
-        }
-        catch (@NotNull final Throwable unexpectedError)
-        {
-            getLog().debug( "unable to get thread count for the current build: " + unexpectedError.getMessage());
-        }
-
-        return "";
+        return project.getVersion();
     }
 
     /**

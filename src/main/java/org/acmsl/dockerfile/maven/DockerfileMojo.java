@@ -206,6 +206,19 @@ public class DockerfileMojo
     {
         UniqueLogFactory.getLog(DockerfileMojo.class).info(pluginContext);
 
+        try
+        {
+            final Method getRequestMethod = this.session.getClass().getMethod("getRequest");
+            final Object mavenExecutionRequest = getRequestMethod.invoke(this.session);
+            final Method getThreadCountMethod = mavenExecutionRequest.getClass().getMethod("getThreadCount");
+            final String threadCount = (String) getThreadCountMethod.invoke(mavenExecutionRequest);
+            result  = Integer.valueOf(threadCount);
+        }
+        catch (@NotNull final Throwable unexpectedError)
+        {
+            getLog().debug( "unable to get thread count for the current build: " + unexpectedError.getMessage());
+        }
+
         return "";
     }
 

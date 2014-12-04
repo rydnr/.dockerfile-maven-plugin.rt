@@ -171,6 +171,7 @@ public class DockerfileMojo
         execute(
             log,
             retrieveOwnVersion(retrievePomProperties(log)),
+            retrieveTargetName(retrieveTargetProject()),
             retrieveTargetVersion(retrieveTargetProject()));
     }
 
@@ -219,15 +220,28 @@ public class DockerfileMojo
     }
 
     /**
+     * Retrieves the target name.
+     * @param project the target project.
+     * @return such name.
+     */
+    @NotNull
+    protected String retrieveTargetName(@NotNull final MavenProject project)
+    {
+        return project.getName();
+    }
+
+    /**
      * Executes Dockerfile Maven Plugin.
      * @param log the Maven log.
      * @param ownVersion the Dockerfile Maven Plugin version.
+     * @param targetName the target name.
      * @param targetVersion the target version.
      * @throws MojoExecutionException if the process fails.
      */
     protected void execute(
         @NotNull final Log log,
         @NotNull final String ownVersion,
+        @NotNull final String targetName,
         @NotNull final String targetVersion)
       throws MojoExecutionException
     {

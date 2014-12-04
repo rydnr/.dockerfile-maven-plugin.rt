@@ -215,8 +215,6 @@ public class DockerfileMojo
     @NotNull
     protected String retrieveTargetVersion(@NotNull final MavenProject project)
     {
-        UniqueLogFactory.getLog(DockerfileMojo.class).info(pluginContext);
-
         return project.getVersion();
     }
 

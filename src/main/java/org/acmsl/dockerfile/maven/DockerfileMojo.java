@@ -158,7 +158,10 @@ public class DockerfileMojo
     protected void execute(@NotNull final Log log)
         throws MojoExecutionException
     {
-        execute(log, retrieveVersion(retrievePomProperties(log)));
+        execute(
+            log,
+            retrieveOwnVersion(retrievePomProperties(log)),
+            retrieveTargetVersion());
     }
 
     /**
@@ -167,7 +170,7 @@ public class DockerfileMojo
      * @return the version entry.
      */
     @NotNull
-    protected String retrieveVersion(@Nullable final Properties properties)
+    protected String retrieveOwnVersion(@Nullable final Properties properties)
     {
         @NotNull final String result;
 

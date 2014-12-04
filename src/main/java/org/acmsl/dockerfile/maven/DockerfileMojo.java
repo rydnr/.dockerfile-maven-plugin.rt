@@ -202,10 +202,14 @@ public class DockerfileMojo
     /**
      * Executes Dockerfile Maven Plugin.
      * @param log the Maven log.
-     * @param version the Dockerfile Maven Plugin version.
+     * @param ownVersion the Dockerfile Maven Plugin version.
+     * @param targetVersion the target version.
      * @throws MojoExecutionException if the process fails.
      */
-    protected void execute(@NotNull final Log log, final String version)
+    protected void execute(
+        @NotNull final Log log,
+        @NotNull final String ownVersion,
+        @NotNull final String targetVersion)
         throws MojoExecutionException
     {
         boolean running = false;
@@ -234,7 +238,7 @@ public class DockerfileMojo
 
         if (!running)
         {
-            log.error("NOT running Dockerfile Maven Plugin " + version);
+            log.error("NOT running Dockerfile Maven Plugin " + ownVersion);
             throw new MojoExecutionException("Dockerfile Maven Plugin could not start");
         }
     }

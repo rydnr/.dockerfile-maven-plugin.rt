@@ -161,7 +161,7 @@ public class DockerfileMojo
         execute(
             log,
             retrieveOwnVersion(retrievePomProperties(log)),
-            retrieveTargetVersion());
+            retrieveTargetVersion(getPluginContext()));
     }
 
     /**
@@ -187,10 +187,15 @@ public class DockerfileMojo
         return result;
     }
 
+    /**
+     * Retrieves the target version.
+     * @param pluginContext the context.
+     * @return such version.
+     */
     @NotNull
-    protected String retrieveTargetVersion()
+    protected String retrieveTargetVersion(@NotNull final Map<?, ?> pluginContext)
     {
-        
+        UniqueLogFactory.getLog(DockerfileMojo.class).info(pluginContext);
     }
 
     /**

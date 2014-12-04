@@ -246,7 +246,7 @@ public class DockerfileMojo
                 log.warn("Cannot create output folder: " + outputDir);
             }
 
-            log.info("Running Dockerfile Maven Plugin " + ownVersion);
+            log.info("Running Dockerfile Maven Plugin " + ownVersion + " on " + targetVersion);
 
             running = true;
         }

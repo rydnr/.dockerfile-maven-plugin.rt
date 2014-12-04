@@ -187,6 +187,12 @@ public class DockerfileMojo
         return result;
     }
 
+    @NotNull
+    protected String retrieveTargetVersion()
+    {
+        
+    }
+
     /**
      * Executes Dockerfile Maven Plugin.
      * @param log the Maven log.

@@ -229,7 +229,7 @@ public class DockerfileMojo
         @NotNull final Log log,
         @NotNull final String ownVersion,
         @NotNull final String targetVersion)
-        throws MojoExecutionException
+      throws MojoExecutionException
     {
         boolean running = false;
 

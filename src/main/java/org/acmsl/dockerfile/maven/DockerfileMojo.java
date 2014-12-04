@@ -39,6 +39,7 @@ import org.acmsl.commons.logging.UniqueLogFactory;
 /*
  * Importing some Maven classes.
  */
+import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.logging.Log;
@@ -88,6 +89,13 @@ public class DockerfileMojo
      */
     @Parameter (name = Literals.OUTPUT_DIR_CC, property = Literals.OUTPUT_DIR_CC, required = false, defaultValue = "${project.build.dir}/META-INF/")
     private File m__OutputDir;
+
+    /**
+     * The current build session instance. This is used for toolchain manager API calls.
+     * @readonly
+     */
+    @Parameter (defaultValue = "${session}", required = true, readonly = true)
+    private MavenSession session;
 
     /**
      * Specifies the output directory.

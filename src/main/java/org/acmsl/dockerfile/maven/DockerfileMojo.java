@@ -197,6 +197,8 @@ public class DockerfileMojo
     protected String retrieveTargetVersion(@NotNull final Map<?, ?> pluginContext)
     {
         UniqueLogFactory.getLog(DockerfileMojo.class).info(pluginContext);
+
+        return "";
     }
 
     /**

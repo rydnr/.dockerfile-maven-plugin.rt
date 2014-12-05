@@ -68,9 +68,11 @@ public class DockerfileGeneratorTest
 {
     /**
      * Checks whether the generator can find the template.
+     * @throws IOException a the temporary file cannot be created.
      */
     @Test
     public void generator_finds_the_template()
+        throws IOException
     {
         @NotNull final Map<String, String> input = new HashMap<String, String>();
 

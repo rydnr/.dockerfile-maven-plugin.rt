@@ -156,6 +156,57 @@ public class DockerfileMojo
     }
 
     /**
+     * Specifies the template.
+     * @param template such template.
+     */
+    protected final void immutableSetTemplate(@NotNull final File template)
+    {
+        m__Template = template;
+    }
+
+    /**
+     * Specifies the template.
+     * @param template such template.
+     */
+    public void setTemplate(@NotNull final File template)
+    {
+        immutableSetTemplate(template);
+    }
+
+    /**
+     * Returns the template.
+     * @return such template.
+     */
+    @Nullable
+    protected final File immutableGetTemplate()
+    {
+        return m__Template;
+    }
+
+    /**
+     * Returns the template.
+     * @return such template.
+     */
+    @Nullable
+    public File getTemplate()
+    {
+        @Nullable final File result;
+
+        @Nullable final String aux = System.getProperty(Literals.DOCKERFILE_TEMPLATE_DIR);
+
+        if (aux == null)
+        {
+            result = immutableGetTemplate();
+        }
+        else
+        {
+            result = new File(aux);
+        }
+
+        return result;
+    }
+
+    /**
      * Executes Dockerfile Maven plugin.
      * @throws org.apache.maven.plugin.MojoExecutionException if the process fails.
      */

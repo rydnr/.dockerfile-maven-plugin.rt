@@ -323,6 +323,9 @@ public class DockerfileMojo
      * @param log the Maven log.
      * @param ownVersion the Dockerfile Maven Plugin version.
      * @param targetProject the target project.
+     * @param outputDir the output dir.
+     * @param template the template.
+     * @param encoding the file encoding.
      * @throws MojoExecutionException if the process fails.
      */
     protected void execute(

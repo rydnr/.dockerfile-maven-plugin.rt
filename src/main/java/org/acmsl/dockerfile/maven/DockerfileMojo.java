@@ -375,7 +375,7 @@ public class DockerfileMojo
             log.error(Literals.TEMPLATE_L + " is null");
         }
 
-        @NotNull final actualEncoding;
+        @NotNull final String actualEncoding;
 
         if (encoding == null)
         {

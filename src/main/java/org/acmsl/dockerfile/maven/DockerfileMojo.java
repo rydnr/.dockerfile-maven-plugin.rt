@@ -177,7 +177,7 @@ public class DockerfileMojo
      * Returns the template.
      * @return such template.
      */
-    @Nullable
+    @NotNull
     protected final File immutableGetTemplate()
     {
         return m__Template;
@@ -187,10 +187,10 @@ public class DockerfileMojo
      * Returns the template.
      * @return such template.
      */
-    @Nullable
+    @NotNull
     public File getTemplate()
     {
-        @Nullable final File result;
+        @NotNull final File result;
 
         @Nullable final String aux = System.getProperty(Literals.DOCKERFILE_TEMPLATE);
 

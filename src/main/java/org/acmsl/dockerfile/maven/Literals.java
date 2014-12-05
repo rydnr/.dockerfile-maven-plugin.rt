@@ -117,4 +117,14 @@ public class Literals
      * String literal: "dockerfile.template".
      */
     public static final String DOCKERFILE_TEMPLATE = "dockerfile.template";
+
+    /**
+     * String literal: "encoding".
+     */
+    public static final String ENCODING_L = "encoding";
+
+    /**
+     * String literal: "dockerfile.encoding".
+     */
+    public static final String DOCKERFILE_ENCODING = "dockerfile.encoding";
 }

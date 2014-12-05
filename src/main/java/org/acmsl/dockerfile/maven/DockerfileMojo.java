@@ -101,6 +101,12 @@ public class DockerfileMojo
     private File m__Template;
 
     /**
+     * The file encoding.
+     */
+    @Parameter (name = Literals.ENCODING, property = ENCODING, required = false, defaultValue = "${project.build.sourceEncoding}")
+    private String m__strEncoding;
+
+    /**
      * The current build session instance. This is used for toolchain manager API calls.
      * @readonly
      */
@@ -204,6 +210,51 @@ public class DockerfileMojo
         else
         {
             result = new File(aux);
+        }
+
+        return result;
+    }
+
+    /**
+     * Specifies the encoding.
+     * @param encoding the encoding.
+     */
+    protected final void immutableSetEncoding(@NotNull final String encoding)
+    {
+        m__strEncoding = encoding;
+    }
+
+    /**
+     * Specifies the encoding.
+     * @param encoding the encoding.
+     */
+    public void setEncoding(@NotNull final String encoding)
+    {
+        immutableSetEncoding(encoding);
+    }
+
+    /**
+     * Retrieves the encoding.
+     * @return such information.
+     */
+    @Nullable
+    protected final String immutableGetEncoding()
+    {
+        return m__strEncoding;
+    }
+
+    /**
+     * Retrieves the encoding.
+     * @return such information.
+     */
+    @Nullable
+    public String getEncoding()
+    {
+        @Nullable String result = System.getProperty(Literals.ENCODING_L);
+
+        if (result == null)
+        {
+            result = immutableGetEncoding();
         }
 
         return result;

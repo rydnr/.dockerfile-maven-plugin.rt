@@ -361,4 +361,18 @@ public class DockerfileMojo
     {
         UniqueLogFactory.initializeInstance(commonsLoggingLog);
     }
+
+    /**
+     * Generates the dockerfile.
+     * @param outputDir the output path.
+     * @param template the Dockerfile.stg template.
+     * @param target the target project.
+     */
+    protected void generateDockerfile(
+        @NotNull final File outputDir, @NotNull final File template, @NotNull final MavenProject target)
+    {
+        @NotNull final DockerfileGenerator generator = new DockerfileGenerator(translateTarget(target), template);
+
+        generator.generateDockerfile();
+    }
 }

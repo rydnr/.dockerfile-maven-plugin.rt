@@ -208,7 +208,7 @@ public class DockerfileGenerator
     @NotNull
     public String generateDockerfile()
     {
-        return generateDockerfile(immutableGetInput());
+        return generateDockerfile(immutableGetInput(), getTemplate());
     }
 
     /**

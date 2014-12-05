@@ -332,15 +332,13 @@ public class DockerfileMojo
         @NotNull final Log log,
         @NotNull final String ownVersion,
         @NotNull final MavenProject targetProject,
-        @Nullable final File outputDir,
+        @NotNull final File outputDir,
         @Nullable final File template,
         @Nullable final String encoding)
       throws MojoExecutionException
     {
         boolean running = false;
 
-        if  (outputDirPath != null)
-        {
             if (   (!outputDir.exists())
                 && (!outputDir.mkdirs()))
             {

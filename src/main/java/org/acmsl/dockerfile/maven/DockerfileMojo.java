@@ -360,7 +360,13 @@ public class DockerfileMojo
 
                 running = true;
 
-                generateDockerfile(outputDir, template, targetProject, ownVersion);
+                generateDockerfile(
+                    outputDir,
+                    template,
+                    targetProject,
+                    ownVersion,
+                    encoding,
+                    FileUtils.getInstance());
             }
         }
         else

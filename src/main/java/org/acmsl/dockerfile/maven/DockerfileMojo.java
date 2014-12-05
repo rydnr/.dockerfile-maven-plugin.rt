@@ -266,39 +266,6 @@ public class DockerfileMojo
     }
 
     /**
-     * Retrieves the target version.
-     * @param project the target project.
-     * @return such version.
-     */
-    @NotNull
-    protected String retrieveTargetVersion(@NotNull final MavenProject project)
-    {
-        return project.getVersion();
-    }
-
-    /**
-     * Retrieves the target name.
-     * @param project the target project.
-     * @return such name.
-     */
-    @NotNull
-    protected String retrieveTargetName(@NotNull final MavenProject project)
-    {
-        return project.getName();
-    }
-
-    /**
-     * Retrieves the target group.
-     * @param project the target project.
-     * @return such group.
-     */
-    @NotNull
-    protected String retrieveTargetGroupId(@NotNull final MavenProject project)
-    {
-        return project.getGroupId();
-    }
-
-    /**
      * Executes Dockerfile Maven Plugin.
      * @param log the Maven log.
      * @param ownVersion the Dockerfile Maven Plugin version.

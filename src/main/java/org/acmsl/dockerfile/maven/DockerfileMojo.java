@@ -482,7 +482,7 @@ public class DockerfileMojo
         @NotNull final File template,
         @NotNull final MavenProject target,
         @NotNull final String ownVersion,
-        @NotNull final String encoding,
+        @NotNull final Charset encoding,
         @NotNull final FileUtils fileUtils)
       throws IOException,
              SecurityException

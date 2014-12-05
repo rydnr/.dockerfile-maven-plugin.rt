@@ -94,8 +94,8 @@ public class DockerfileMojo
     /**
      * The output directory.
      */
-    @Parameter (name = Literals.TEMPLATE_CC, property = Literals.TEMPLATE_CC, required = true)
-    private File m__OutputDir;
+    @Parameter (name = Literals.TEMPLATE_L, property = Literals.TEMPLATE_L, required = true)
+    private File m__Template;
 
     /**
      * The current build session instance. This is used for toolchain manager API calls.

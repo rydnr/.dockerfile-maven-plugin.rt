@@ -161,7 +161,8 @@ public class DockerfileGenerator
      * @param input the input.
      * @param template the template.
      */
-    public DockerfileGenerator(@NotNull final Map<String, ?> input, @NotNull final File template)
+    public DockerfileGenerator(
+        @NotNull final Map<String, ?> input, @NotNull final File template)
     {
         this.m__mInput = input;
         this.m__Template = template;

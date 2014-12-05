@@ -248,7 +248,7 @@ public class DockerfileGenerator
         @NotNull final Charset charset)
     {
         return
-            retrieveGroup(
+            configureGroupFile(
                 new STGroupFile(path, charset.displayName()),
                 lookupPaths,
                 errorListener,
@@ -264,7 +264,7 @@ public class DockerfileGenerator
      * @return such instance.
      */
     @NotNull
-    protected STGroup retrieveGroupFromClasspath(
+    protected STGroup configureGroupFile(
         @NotNull final STGroupFile groupFile,
         @NotNull final List<String> lookupPaths,
         @NotNull final STErrorListener errorListener,

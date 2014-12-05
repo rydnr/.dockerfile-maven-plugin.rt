@@ -422,6 +422,7 @@ public class DockerfileMojo
      * @param template the Dockerfile.stg template.
      * @param target the target project.
      * @param ownVersion my own version.
+     * @param encoding the file encoding.
      * @param fileUtils the {@link FileUtils} instance.
      * @throws IOException if the file cannot be written.
      * @throws SecurityException if we're not allowed to write the file.

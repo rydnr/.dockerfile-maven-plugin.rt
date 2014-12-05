@@ -375,6 +375,17 @@ public class DockerfileMojo
             log.error(Literals.TEMPLATE_L + " is null");
         }
 
+        if (encoding == null)
+        {
+            actualEncoding = Charset.defaultCharset();
+
+            log.warning(Literals.ENCODING_L + " not specified. Using " + actualEncoding);
+        }
+        else
+        {
+            actualEncoding = encoding;
+        }
+
         if (   (outputDirFine)
             && (templateFine))
         {

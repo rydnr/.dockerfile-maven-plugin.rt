@@ -306,7 +306,7 @@ public class DockerfileMojo
 
                 running = true;
 
-                DockerfileGenerator generator =
+                generateDockerfile()
             }
         }
         else

@@ -41,7 +41,7 @@ import org.acmsl.commons.utils.io.FileUtils;
  */
 import java.io.File;
 import java.io.IOException;
-import java.nio.Charset;
+import java.io.Charset;
 import java.util.Date;
 import java.util.Map;
 import java.util.HashMap;

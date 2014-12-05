@@ -293,9 +293,9 @@ public class DockerfileMojo
      * @return such group.
      */
     @NotNull
-    protected String retrieveTargetGroup(@NotNull final MavenProject project)
+    protected String retrieveTargetGroupId(@NotNull final MavenProject project)
     {
-        return project.
+        return project.getGroupId();
     }
 
     /**

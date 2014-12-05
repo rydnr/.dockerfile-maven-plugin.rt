@@ -41,7 +41,7 @@ import org.checkthread.annotations.ThreadSafe;
 
 /**
  * Literals for Dockerfile Maven Plugin.
- * @author <a href="mailto:queryj@acm-sl.org">Jose San Leandro</a>
+ * @author <a href="mailto:chous@acm-sl.org">Jose San Leandro</a>
  * @since 1.0
  * Created: 2014/12/01
  */
@@ -102,4 +102,9 @@ public class Literals
      * String literal: "org/acmsl/dockerfile/Dockerfile.stg".
      */
     public static final String ORG_ACMSL_DOCKERFILE_DOCKERFILE_STG = "org/acmsl/dockerfile/Dockerfile.stg";
+
+    /**
+     * String literal: "template".
+     */
+    public static final String TEMPLATE_L = "template";
 }

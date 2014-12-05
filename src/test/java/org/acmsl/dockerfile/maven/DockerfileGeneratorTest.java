@@ -80,7 +80,10 @@ public class DockerfileGeneratorTest
 
         input.put("key", testValue);
 
-        @NotNull final DockerfileGenerator generator = new DockerfileGenerator(input, File.createTempFile("d-m-p", "test"));
+        @NotNull final File template = File.createTempFile("d-m-p", "test");
+        template.delete();
+
+        @NotNull final DockerfileGenerator generator = new DockerfileGenerator(input, template);
 
         Assert.assertNotNull(generator);
 

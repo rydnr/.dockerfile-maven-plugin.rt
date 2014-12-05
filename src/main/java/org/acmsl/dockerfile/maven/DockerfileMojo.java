@@ -268,7 +268,7 @@ public class DockerfileMojo
      * Executes Dockerfile Maven Plugin.
      * @param log the Maven log.
      * @param ownVersion the Dockerfile Maven Plugin version.
-     * @param target the target project.
+     * @param targetProject the target project.
      * @throws MojoExecutionException if the process fails.
      */
     protected void execute(

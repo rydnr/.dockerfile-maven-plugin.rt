@@ -371,6 +371,8 @@ public class DockerfileMojo
      * @param target the target project.
      * @param ownVersion my own version.
      * @param fileUtils the {@link FileUtils} instance.
+     * @throws IOException if the file cannot be written.
+     * @throws SecurityException if we're not allowed to write the file.
      */
     protected void generateDockerfile(
         @NotNull final File outputDir,
@@ -378,6 +380,8 @@ public class DockerfileMojo
         @NotNull final MavenProject target,
         @NotNull final String ownVersion,
         @NotNull final FileUtils fileUtils)
+      throws IOException,
+             SecurityException
     {
         @NotNull final Map<String, Object> input = new HashMap<String, Object>();
 

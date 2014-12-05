@@ -392,7 +392,7 @@ public class DockerfileMojo
 
         @NotNull final String contents = generator.generateDockerfile();
 
-        fileUtils.writeFileIfPossible(
+        fileUtils.writeFile(
             new File(outputDir.getAbsolutePath() + File.separator + "Dockerfile"),
             contents,
             Charset.defaultCharset());

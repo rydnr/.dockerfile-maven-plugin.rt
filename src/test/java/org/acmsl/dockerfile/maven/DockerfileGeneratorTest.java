@@ -77,7 +77,17 @@ public class DockerfileGeneratorTest
 {
     @Rule
     public TemporaryFolder tempFolder = new TemporaryFolder();
-    
+
+    /**
+     * A sample Dockerfile.stg
+     */
+    @NotNull
+    public static final String DOCKERFILE_STG_CONTENTS =
+        "group Dockerfile;\n\n"
+        "source(C) ::= <<\n"
+        "<C.key>\n"
+        ">>\n";
+
     /**
      * Checks whether the generator can find the template.
      * @throws IOException a the temporary file cannot be created.

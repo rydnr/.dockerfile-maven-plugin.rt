@@ -306,7 +306,7 @@ public class DockerfileMojo
 
                 running = true;
 
-                generateDockerfile(outputDir, )
+                generateDockerfile(outputDir, template, targetProject);
             }
         }
         else

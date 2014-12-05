@@ -367,7 +367,7 @@ public class DockerfileMojo
                         template,
                         targetProject,
                         ownVersion,
-                        encoding,
+                        getEncoding(),
                         FileUtils.getInstance());
                 }
                 catch (@NotNull final SecurityException securityException)

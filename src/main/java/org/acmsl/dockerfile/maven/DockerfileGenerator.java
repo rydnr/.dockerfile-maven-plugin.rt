@@ -213,14 +213,16 @@ public class DockerfileGenerator
     /**
      * Generates a new Dockerfile using given information.
      * @param input the input.
+     * @param template the template.
      * @return the Dockerfile content.
      */
     @NotNull
-    protected String generateDockerfile(@NotNull final Map<String, ?> input)
+    protected String generateDockerfile(
+        @NotNull final Map<String, ?> input, @NotNull final File template)
     {
         @NotNull final STGroup templateGroup =
             retrieveGroup(
-                Literals.ORG_ACMSL_DOCKERFILE_DOCKERFILE_STG,                
+                template,
                 Arrays.asList(Literals.ORG_ACMSL_DOCKERFILE),
                 ST_ERROR_LISTENER,
                 Charset.defaultCharset());

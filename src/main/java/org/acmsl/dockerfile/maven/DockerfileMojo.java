@@ -388,6 +388,9 @@ public class DockerfileMojo
 
         @NotNull final String contents = generator.generateDockerfile();
 
-        
+        fileUtils.writeFileIfPossible(
+            new File(outputDir.getAbsolutePath() + File.separator + "Dockerfile"),
+            contents,
+            Charset.defaultCharset());
     }
 }

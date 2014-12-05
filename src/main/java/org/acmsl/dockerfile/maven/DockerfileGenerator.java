@@ -60,6 +60,7 @@ import org.jetbrains.annotations.Nullable;
 /*
  * Importing some JDK classes.
  */
+import java.io.File;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.HashMap;

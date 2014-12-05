@@ -396,6 +396,6 @@ public class DockerfileMojo
         fileUtils.writeFile(
             new File(outputDir.getAbsolutePath() + File.separator + "Dockerfile"),
             contents,
-            Charset.defaultCharset());
+            target.get Charset.defaultCharset());
     }
 }

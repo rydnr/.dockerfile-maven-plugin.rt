@@ -94,6 +94,11 @@ public class Literals
     public static final String C_U = "C";
 
     /**
+     * String literal: "T".
+     */
+    public static final String T_U = "T";
+
+    /**
      * String literal: "org/acmsl/dockerfile".
      */
     public static final String ORG_ACMSL_DOCKERFILE = "org/acmsl/dockerfile";

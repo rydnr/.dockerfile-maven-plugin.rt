@@ -381,11 +381,11 @@ public class DockerfileMojo
         {
             actualEncoding = Charset.defaultCharset();
 
-            log.warning(Literals.ENCODING_L + " not specified. Using " + actualEncoding);
+            log.warn(Literals.ENCODING_L + " not specified. Using " + actualEncoding);
         }
         else
         {
-            actualEncoding = encoding;
+            actualEncoding = Charset.forName(encoding);
         }
 
         if (   (outputDirFine)

@@ -83,10 +83,10 @@ public class DockerfileGeneratorTest
      */
     @NotNull
     public static final String DOCKERFILE_STG_CONTENTS =
-        "group Dockerfile;\n\n"
-        "source(C) ::= <<\n"
-        "<C.key>\n"
-        ">>\n";
+          "group Dockerfile;\n\n"
+        + "source(C) ::= <<\n"
+        + "<C.key>\n"
+        + ">>\n";
 
     /**
      * Checks whether the generator can find the template.

@@ -282,7 +282,10 @@ public class DockerfileMojo
         execute(
             log,
             retrieveOwnVersion(retrievePomProperties(log)),
-            retrieveTargetProject());
+            retrieveTargetProject(),
+            getOutputDir(),
+            getTemplate(),
+            getEncoding());
     }
 
     /**

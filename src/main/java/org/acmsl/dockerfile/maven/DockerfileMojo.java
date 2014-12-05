@@ -360,13 +360,24 @@ public class DockerfileMojo
 
                 running = true;
 
-                generateDockerfile(
-                    outputDir,
-                    template,
-                    targetProject,
-                    ownVersion,
-                    encoding,
-                    FileUtils.getInstance());
+                try
+                {
+                    generateDockerfile(
+                        outputDir,
+                        template,
+                        targetProject,
+                        ownVersion,
+                        encoding,
+                        FileUtils.getInstance());
+                }
+                catch (@NotNull final SecurityException securityException)
+                {
+                    log.error("Not allowed to write output file in " + outputDir.getAbsolutePath(), securityException);
+                }
+                catch (@NotNull final IOException ioException)
+                {
+                    log.error("Cannot write output file in " + outputDir.getAbsolutePath(), securityException);
+                }
             }
         }
         else

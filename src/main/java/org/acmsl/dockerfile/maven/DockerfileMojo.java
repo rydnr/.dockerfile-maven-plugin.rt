@@ -257,13 +257,19 @@ public class DockerfileMojo
 
         if  (outputDirPath != null)
         {
-            //initialize directories
             @NotNull final File outputDir = outputDirPath.getAbsoluteFile();
 
             if (   (!outputDir.exists())
                 && (!outputDir.mkdirs()))
             {
                 log.warn("Cannot create output folder: " + outputDir);
+            }
+
+            @NotNull final File template = getTemplate();
+
+            if (!template.exists())
+            {
+                log.warn("Dockerfile template does not exist: " + template);
             }
 
             log.info("Running Dockerfile Maven Plugin " + ownVersion + " on " + targetName + " " + targetVersion);

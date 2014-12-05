@@ -150,12 +150,20 @@ public class DockerfileGenerator
     private final Map<String, ?> m__mInput;
 
     /**
+     * The template file.
+     */
+    @NotNull
+    private final File m__Template;
+
+    /**
      * Creates a new instance.
      * @param input the input.
+     * @param template the template.
      */
-    public DockerfileGenerator(@NotNull final Map<String, ?> input)
+    public DockerfileGenerator(@NotNull final Map<String, ?> input, @NotNull final File template)
     {
         this.m__mInput = input;
+        this.m__Template = template;
     }
 
     /**
@@ -179,6 +187,16 @@ public class DockerfileGenerator
             new HashMap<String, Object>(this.m__mInput);
 
         return result;
+    }
+
+    /**
+     * Retrieves the template.
+     * @return such file.
+     */
+    @NotNull
+    public File getTemplate()
+    {
+        return this.m__Template;
     }
 
     /**

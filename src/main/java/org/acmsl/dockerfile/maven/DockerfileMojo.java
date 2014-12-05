@@ -300,8 +300,9 @@ public class DockerfileMojo
             else
             {
                 log.info(
-                    "Running Dockerfile Maven Plugin "
-                    + ownVersion + " on " + targetProject.getGroupId() + ":" + targetProject.getArtifactId() + ":" + targetProject.getVersion());
+                      "Running Dockerfile Maven Plugin " + ownVersion
+                    + " on " + targetProject.getGroupId() + ":" + targetProject.getArtifactId()
+                    + ":" + targetProject.getVersion());
 
                 running = true;
             }

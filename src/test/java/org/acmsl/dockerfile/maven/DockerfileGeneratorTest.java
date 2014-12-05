@@ -91,7 +91,7 @@ public class DockerfileGeneratorTest
 
         input.put("key", testValue);
 
-        @NotNull final File template = File.createTempFile("Dockerfile", ".stg", new File(tempFolder.getFolder()));
+        @NotNull final File template = File.createTempFile("Dockerfile", ".stg", new File(tempFolder.getFile()));
 
         @NotNull final FileUtils fileUtils = FileUtils.getInstance();
 

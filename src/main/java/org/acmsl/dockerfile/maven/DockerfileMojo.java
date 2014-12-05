@@ -375,7 +375,7 @@ public class DockerfileMojo
         @NotNull final MavenProject target,
         @NotNull final String ownVersion)
     {
-        @NotNull final Map<String, ?> input = new HashMap<String, Object>();
+        @NotNull final Map<String, Object> input = new HashMap<String, Object>();
 
         input.put(Literals.T_U, target);
         input.put(Literals.VERSION_L, ownVersion);

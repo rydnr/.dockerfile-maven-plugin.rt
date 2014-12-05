@@ -222,7 +222,7 @@ public class DockerfileGenerator
      * @return such instance.
      */
     @NotNull
-    protected STGroup retrieveGroup(
+    protected STGroup retrieveGroupFromClasspath(
         @NotNull final String path,
         @NotNull final List<String> lookupPaths,
         @NotNull final STErrorListener errorListener,

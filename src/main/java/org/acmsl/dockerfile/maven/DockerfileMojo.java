@@ -351,7 +351,7 @@ public class DockerfileMojo
             }
             else
             {
-                outputDirFile = true;
+                outputDirFine = true;
             }
         }
         else

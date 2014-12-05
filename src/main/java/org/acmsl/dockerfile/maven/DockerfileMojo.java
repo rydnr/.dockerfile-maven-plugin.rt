@@ -58,12 +58,13 @@ import org.jetbrains.annotations.Nullable;
 /*
  * Importing some JDK classes.
  */
-import java.util.Properties;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 /*
  * Importing checkthread.org annotations.

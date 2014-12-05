@@ -322,10 +322,12 @@ public class DockerfileMojo
             {
                 log.warn("Dockerfile template does not exist: " + template);
             }
+            else
+            {
+                log.info("Running Dockerfile Maven Plugin " + ownVersion + " on " + targetName + " " + targetVersion);
 
-            log.info("Running Dockerfile Maven Plugin " + ownVersion + " on " + targetName + " " + targetVersion);
-
-            running = true;
+                running = true;
+            }
         }
         else
         {

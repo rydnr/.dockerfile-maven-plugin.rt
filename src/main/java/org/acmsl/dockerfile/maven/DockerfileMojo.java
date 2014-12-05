@@ -305,6 +305,8 @@ public class DockerfileMojo
                     + ":" + targetProject.getVersion());
 
                 running = true;
+
+                DockerfileGenerator generator =
             }
         }
         else

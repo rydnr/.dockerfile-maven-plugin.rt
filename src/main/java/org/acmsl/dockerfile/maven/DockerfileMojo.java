@@ -250,7 +250,7 @@ public class DockerfileMojo
     @Nullable
     public String getEncoding()
     {
-        @Nullable String result = System.getProperty(Literals.ENCODING_L);
+        @Nullable String result = System.getProperty(Literals.DOCKERFILE_ENCODING);
 
         if (result == null)
         {

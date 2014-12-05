@@ -95,7 +95,7 @@ public class DockerfileGeneratorTest
 
         @NotNull final FileUtils fileUtils = FileUtils.getInstance();
 
-        
+        fileUtils.writeFileIfPossible(template, DOCKERFILE_STG_CONTENTS, Charset.defaultCharset());
 
         @NotNull final DockerfileGenerator generator = new DockerfileGenerator(input, template);
 

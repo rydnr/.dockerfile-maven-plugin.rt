@@ -35,6 +35,7 @@ package org.acmsl.dockerfile.maven;
  * Importing some ACM-SL Java Commons classes.
  */
 import org.acmsl.commons.logging.UniqueLogFactory;
+import org.acmsl.commons.utils.io.FileUtils;
 
 /*
  * Importing some Maven classes.

@@ -77,7 +77,7 @@ public class DockerfileGeneratorTest
 
         input.put("key", testValue);
 
-        @NotNull final DockerfileGenerator generator = new DockerfileGenerator(input);
+        @NotNull final DockerfileGenerator generator = new DockerfileGenerator(input, File.generateTempFile());
 
         Assert.assertNotNull(generator);
 

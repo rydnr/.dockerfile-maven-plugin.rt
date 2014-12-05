@@ -62,7 +62,7 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.junit.TemporaryFolder;
+import org.junit.rules.TemporaryFolder;
 import org.junit.Test;
 
 /**

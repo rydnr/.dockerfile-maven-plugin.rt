@@ -107,4 +107,9 @@ public class Literals
      * String literal: "template".
      */
     public static final String TEMPLATE_L = "template";
+
+    /**
+     * String literal: "dockerfile.template".
+     */
+    public static final String DOCKERFILE_TEMPLATE_L = "dockerfile.template";
 }

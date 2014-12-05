@@ -192,7 +192,7 @@ public class DockerfileMojo
     {
         @Nullable final File result;
 
-        @Nullable final String aux = System.getProperty(Literals.DOCKERFILE_TEMPLATE_DIR);
+        @Nullable final String aux = System.getProperty(Literals.DOCKERFILE_TEMPLATE);
 
         if (aux == null)
         {

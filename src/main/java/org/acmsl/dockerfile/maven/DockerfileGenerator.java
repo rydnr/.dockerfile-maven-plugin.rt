@@ -242,6 +242,29 @@ public class DockerfileGenerator
      */
     @NotNull
     protected STGroup retrieveGroup(
+        @NotNull final File template,
+        @NotNull final List<String> lookupPaths,
+        @NotNull final STErrorListener errorListener,
+        @NotNull final Charset charset)
+    {
+        return
+            configureGroupFile(
+                new STGroupFile(template, charset.displayName()),
+                lookupPaths,
+                errorListener,
+                charset);
+    }
+
+    /**
+     * Retrieves the string template group.
+     * @param path the path.
+     * @param lookupPaths the lookup paths.
+     * @param errorListener the {@link STErrorListener} instance.
+     * @param charset the charset.
+     * @return such instance.
+     */
+    @NotNull
+    protected STGroup retrieveGroup(
         @NotNull final String path,
         @NotNull final List<String> lookupPaths,
         @NotNull final STErrorListener errorListener,

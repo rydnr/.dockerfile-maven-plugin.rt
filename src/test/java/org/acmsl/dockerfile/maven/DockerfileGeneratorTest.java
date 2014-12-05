@@ -74,27 +74,7 @@ import org.junit.Test;
 public class DockerfileGeneratorTest
 {
     @Rule
-    public MojoRule rule =
-        new MojoRule()
-        {
-            /**
-             * {@inheritDoc}
-             */
-            @Override
-            protected void before()
-                throws Throwable 
-            {
-            }
-
-            /**
-             * {@inheritDoc}
-             */
-            @Override
-            protected void after()
-            {
-            }
-        };
-
+    public TemporaryFolder tempFolder = new TemporaryFolder();
     
     /**
      * Checks whether the generator can find the template.

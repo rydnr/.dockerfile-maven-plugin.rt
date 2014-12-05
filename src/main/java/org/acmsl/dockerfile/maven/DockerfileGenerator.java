@@ -249,7 +249,7 @@ public class DockerfileGenerator
     {
         return
             configureGroupFile(
-                new STGroupFile(template, charset.displayName()),
+                new STGroupFile(template.getAbsolutePath(), charset.displayName()),
                 lookupPaths,
                 errorListener,
                 charset);

@@ -339,6 +339,8 @@ public class DockerfileMojo
     {
         boolean running = false;
 
+        if (outputDir != null)
+        {
             if (   (!outputDir.exists())
                 && (!outputDir.mkdirs()))
             {

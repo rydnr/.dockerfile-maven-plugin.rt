@@ -288,6 +288,17 @@ public class DockerfileMojo
     }
 
     /**
+     * Retrieves the target group.
+     * @param project the target project.
+     * @return such group.
+     */
+    @NotNull
+    protected String retrieveTargetGroup(@NotNull final MavenProject project)
+    {
+        return project.
+    }
+
+    /**
      * Executes Dockerfile Maven Plugin.
      * @param log the Maven log.
      * @param ownVersion the Dockerfile Maven Plugin version.

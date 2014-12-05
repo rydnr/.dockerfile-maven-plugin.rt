@@ -103,7 +103,7 @@ public class DockerfileMojo
     /**
      * The file encoding.
      */
-    @Parameter (name = Literals.ENCODING, property = ENCODING, required = false, defaultValue = "${project.build.sourceEncoding}")
+    @Parameter (name = Literals.ENCODING_L, property = Literals.ENCODING_L, required = false, defaultValue = "${project.build.sourceEncoding}")
     private String m__strEncoding;
 
     /**

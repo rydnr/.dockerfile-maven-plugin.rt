@@ -328,7 +328,10 @@ public class DockerfileMojo
     protected void execute(
         @NotNull final Log log,
         @NotNull final String ownVersion,
-        @NotNull final MavenProject targetProject)
+        @NotNull final MavenProject targetProject,
+        @NotNull final File outputDir,
+        @NotNull final File template,
+        @NotNull final String encoding)
       throws MojoExecutionException
     {
         boolean running = false;
@@ -358,6 +361,7 @@ public class DockerfileMojo
                     + " on " + targetProject.getGroupId() + ":" + targetProject.getArtifactId()
                     + ":" + targetProject.getVersion());
 
+                @Nullable final String encoding = getEncoding();
                 running = true;
 
                 try

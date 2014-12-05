@@ -34,6 +34,7 @@ package org.acmsl.dockerfile.maven;
 /*
  * Importing JDK classes.
  */
+import java.io.File;
 import java.util.Date;
 import java.util.Map;
 import java.util.HashMap;

@@ -228,8 +228,7 @@ public class DockerfileMojo
         execute(
             log,
             retrieveOwnVersion(retrievePomProperties(log)),
-            retrieveTargetName(retrieveTargetProject()),
-            retrieveTargetVersion(retrieveTargetProject()));
+            retrieveTargetProject());
     }
 
     /**

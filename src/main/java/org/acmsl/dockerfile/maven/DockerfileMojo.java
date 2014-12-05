@@ -369,9 +369,17 @@ public class DockerfileMojo
      * @param target the target project.
      */
     protected void generateDockerfile(
-        @NotNull final File outputDir, @NotNull final File template, @NotNull final MavenProject target)
+        @NotNull final File outputDir,
+        @NotNull final File template,
+        @NotNull final MavenProject target,
+        @NotNull final String ownVersion)
     {
-        @NotNull final DockerfileGenerator generator = new DockerfileGenerator(translateTarget(target), template);
+        @NotNull final Map<String, String> input = new HashMap<String, String>();
+
+        input.put(Literals.T_U, target);
+        input.put(Literals.VERSION_L, ownVersion);
+
+        @NotNull final DockerfileGenerator generator = new DockerfileGenerator(input, template);
 
         generator.generateDockerfile();
     }

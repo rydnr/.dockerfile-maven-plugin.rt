@@ -376,7 +376,7 @@ public class DockerfileMojo
                 }
                 catch (@NotNull final IOException ioException)
                 {
-                    log.error("Cannot write output file in " + outputDir.getAbsolutePath(), securityException);
+                    log.error("Cannot write output file in " + outputDir.getAbsolutePath(), ioException);
                 }
             }
         }

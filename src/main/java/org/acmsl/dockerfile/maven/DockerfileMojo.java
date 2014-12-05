@@ -396,7 +396,6 @@ public class DockerfileMojo
                 + " on " + targetProject.getGroupId() + ":" + targetProject.getArtifactId()
                 + ":" + targetProject.getVersion());
 
-            @Nullable final String encoding = getEncoding();
             running = true;
 
             try

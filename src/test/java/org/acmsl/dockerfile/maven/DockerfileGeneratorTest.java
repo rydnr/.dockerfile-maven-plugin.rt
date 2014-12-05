@@ -32,6 +32,11 @@
 package org.acmsl.dockerfile.maven;
 
 /*
+ * Importing ACM-SL Java Commons classes.
+ */
+import org.acmsl.utils.FileUtils;
+
+/*
  * Importing JDK classes.
  */
 import java.io.File;

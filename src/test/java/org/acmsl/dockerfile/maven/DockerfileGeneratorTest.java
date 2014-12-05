@@ -59,6 +59,7 @@ import org.checkthread.annotations.ThreadSafe;
  * Importing JUnit classes.
  */
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.Test;
@@ -72,6 +73,29 @@ import org.junit.Test;
 @RunWith(JUnit4.class)
 public class DockerfileGeneratorTest
 {
+    @Rule
+    public MojoRule rule =
+        new MojoRule()
+        {
+            /**
+             * {@inheritDoc}
+             */
+            @Override
+            protected void before()
+                throws Throwable 
+            {
+            }
+
+            /**
+             * {@inheritDoc}
+             */
+            @Override
+            protected void after()
+            {
+            }
+        };
+
+    
     /**
      * Checks whether the generator can find the template.
      * @throws IOException a the temporary file cannot be created.
@@ -90,7 +114,7 @@ public class DockerfileGeneratorTest
 
         @NotNull final FileUtils fileUtils = FileUtils.getInstance();
 
-        template.delete();
+        
 
         @NotNull final DockerfileGenerator generator = new DockerfileGenerator(input, template);
 

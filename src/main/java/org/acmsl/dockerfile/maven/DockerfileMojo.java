@@ -339,12 +339,19 @@ public class DockerfileMojo
     {
         boolean running = false;
 
+        boolean outputDirFine = false;
+        boolean templateFine = false;
+
         if (outputDir != null)
         {
             if (   (!outputDir.exists())
                 && (!outputDir.mkdirs()))
             {
                 log.warn("Cannot create output folder: " + outputDir);
+            }
+            else
+            {
+                outputDirFile = true;
             }
         }
         else
@@ -358,41 +365,46 @@ public class DockerfileMojo
             {
                 log.warn("Dockerfile template does not exist: " + template);
             }
+            else
+            {
+                templateFine = true;
+            }
         }
         else
         {
             log.error(Literals.TEMPLATE_L + " is null");
         }
 
-            else
+        if (   (outputDirFine)
+            && (templateFine))
+        {
+            log.info(
+                "Running Dockerfile Maven Plugin " + ownVersion
+                + " on " + targetProject.getGroupId() + ":" + targetProject.getArtifactId()
+                + ":" + targetProject.getVersion());
+
+            @Nullable final String encoding = getEncoding();
+            running = true;
+
+            try
             {
-                log.info(
-                      "Running Dockerfile Maven Plugin " + ownVersion
-                    + " on " + targetProject.getGroupId() + ":" + targetProject.getArtifactId()
-                    + ":" + targetProject.getVersion());
-
-                @Nullable final String encoding = getEncoding();
-                running = true;
-
-                try
-                {
-                    generateDockerfile(
-                        outputDir,
-                        template,
-                        targetProject,
-                        ownVersion,
-                        getEncoding(),
-                        FileUtils.getInstance());
-                }
-                catch (@NotNull final SecurityException securityException)
-                {
-                    log.error("Not allowed to write output file in " + outputDir.getAbsolutePath(), securityException);
-                }
-                catch (@NotNull final IOException ioException)
-                {
-                    log.error("Cannot write output file in " + outputDir.getAbsolutePath(), ioException);
-                }
+                generateDockerfile(
+                    outputDir,
+                    template,
+                    targetProject,
+                    ownVersion,
+                    getEncoding(),
+                    FileUtils.getInstance());
             }
+            catch (@NotNull final SecurityException securityException)
+            {
+                log.error("Not allowed to write output file in " + outputDir.getAbsolutePath(), securityException);
+            }
+            catch (@NotNull final IOException ioException)
+            {
+                log.error("Cannot write output file in " + outputDir.getAbsolutePath(), ioException);
+            }
+        }
 
         if (!running)
         {

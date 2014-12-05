@@ -346,11 +346,24 @@ public class DockerfileMojo
             {
                 log.warn("Cannot create output folder: " + outputDir);
             }
+        }
+        else
+        {
+            log.error(Literals.OUTPUT_DIR_L + " is null");
+        }
 
+        if (template != null)
+        {
             if (!template.exists())
             {
                 log.warn("Dockerfile template does not exist: " + template);
             }
+        }
+        else
+        {
+            log.error(Literals.TEMPLATE_L + " is null");
+        }
+
             else
             {
                 log.info(
@@ -380,11 +393,6 @@ public class DockerfileMojo
                     log.error("Cannot write output file in " + outputDir.getAbsolutePath(), ioException);
                 }
             }
-        }
-        else
-        {
-            log.error("outputDir is null");
-        }
 
         if (!running)
         {

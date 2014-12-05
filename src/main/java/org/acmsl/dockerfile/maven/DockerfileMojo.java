@@ -299,7 +299,7 @@ public class DockerfileMojo
             }
             else
             {
-                log.info("Running Dockerfile Maven Plugin " + ownVersion + " on " + targetName + " " + targetVersion);
+                log.info("Running Dockerfile Maven Plugin " + ownVersion + " on " + targetProject.getGroupId() + " " + targetProject.getArtifactId() + "");
 
                 running = true;
             }

@@ -356,7 +356,7 @@ public class DockerfileMojo
         }
         else
         {
-            log.error(Literals.OUTPUT_DIR_L + " is null");
+            log.error(Literals.OUTPUT_DIR + " is null");
         }
 
         if (template != null)

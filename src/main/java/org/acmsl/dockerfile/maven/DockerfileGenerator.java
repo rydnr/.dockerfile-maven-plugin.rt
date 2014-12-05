@@ -227,11 +227,11 @@ public class DockerfileGenerator
                 ST_ERROR_LISTENER,
                 Charset.defaultCharset());
 
-        @NotNull final ST template = templateGroup.getInstanceOf(Literals.SOURCE_L);
+        @NotNull final ST st = templateGroup.getInstanceOf(Literals.SOURCE_L);
 
-        template.add(Literals.C_U, input);
+        st.add(Literals.C_U, input);
 
-        return template.render();
+        return st.render();
     }
 
     /**

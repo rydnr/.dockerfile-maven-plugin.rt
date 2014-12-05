@@ -431,6 +431,7 @@ public class DockerfileMojo
         @NotNull final File template,
         @NotNull final MavenProject target,
         @NotNull final String ownVersion,
+        @NotNull final String encoding,
         @NotNull final FileUtils fileUtils)
       throws IOException,
              SecurityException
@@ -447,6 +448,6 @@ public class DockerfileMojo
         fileUtils.writeFile(
             new File(outputDir.getAbsolutePath() + File.separator + "Dockerfile"),
             contents,
-            target.get Charset.defaultCharset());
+            encoding);
     }
 }

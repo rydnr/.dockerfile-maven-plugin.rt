@@ -395,7 +395,7 @@ public class DockerfileMojo
             && (templateFine))
         {
             log.info(
-                "Running Dockerfile Maven Plugin " + ownVersion
+                  "Running Dockerfile Maven Plugin " + ownVersion
                 + " on " + targetProject.getGroupId() + ":" + targetProject.getArtifactId()
                 + ":" + targetProject.getVersion());
 

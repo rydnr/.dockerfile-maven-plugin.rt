@@ -489,10 +489,11 @@ public class DockerfileMojo
      * @param ownVersion my own version.
      * @param encoding the file encoding.
      * @param fileUtils the {@link FileUtils} instance.
+     * @return the generated file.
      * @throws IOException if the file cannot be written.
      * @throws SecurityException if we're not allowed to write the file.
      */
-    protected void generateDockerfile(
+    protected File generateDockerfile(
         @NotNull final File outputDir,
         @NotNull final File template,
         @NotNull final MavenProject target,
@@ -502,6 +503,8 @@ public class DockerfileMojo
       throws IOException,
              SecurityException
     {
+        @NotNull final File result;
+
         @NotNull final Map<String, Object> input = new HashMap<String, Object>();
 
         input.put(Literals.T_U, target);
@@ -511,9 +514,13 @@ public class DockerfileMojo
 
         @NotNull final String contents = generator.generateDockerfile();
 
+        result = new File(outputDir.getAbsolutePath() + File.separator + "Dockerfile");
+
         fileUtils.writeFile(
-            new File(outputDir.getAbsolutePath() + File.separator + "Dockerfile"),
+            result,
             contents,
             encoding);
+
+        return result;
     }
 }

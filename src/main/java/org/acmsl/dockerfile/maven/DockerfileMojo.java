@@ -672,7 +672,8 @@ public class DockerfileMojo
         ArtifactRepository repo = null;
 
         String altDeploymentRepo;
-        if ( ArtifactUtils.isSnapshot( project.getVersion() ) && altSnapshotDeploymentRepository != null )
+
+        if  (ArtifactUtils.isSnapshot( project.getVersion() ) && altSnapshotDeploymentRepository != null)
         {
             altDeploymentRepo = altSnapshotDeploymentRepository;
         }

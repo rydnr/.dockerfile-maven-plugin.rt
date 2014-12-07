@@ -427,7 +427,7 @@ public class DockerfileMojo
             {
                 try
                 {
-                    deploy(attached.getFile(), attached, deploymentRepository, getLocalRepository(), getRetryFailedDeploymentCount());
+                    deploy(dockerfile, attached, deploymentRepository, getLocalRepository(), getRetryFailedDeploymentCount());
                 }
                 catch (final ArtifactDeploymentException e)
                 {

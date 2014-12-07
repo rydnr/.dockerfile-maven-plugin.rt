@@ -652,4 +652,76 @@ public class DockerfileMojo
 
         return result;
     }
+
+    /**
+     * Retrieves the deployment repository.
+     * @param project the project.
+     * @param altDeploymentRepository the deployment repository.
+     * @param altReleaseDeploymentRepository the release repository.
+     * @param altSnapshotDeploymentRepository the snapshot repository.
+     * @return the repository.
+     */
+    protected ArtifactRepository getDeploymentRepository(
+        @NotNull final MavenProject project,
+        @NotNull final String altDeploymentRepository,
+        @NotNull final String altReleaseDeploymentRepository,
+        @NotNull final String altSnapshotDeploymentRepository)
+      throws MojoExecutionException,
+             MojoFailureException
+    {
+        ArtifactRepository repo = null;
+
+        String altDeploymentRepo;
+        if ( ArtifactUtils.isSnapshot( project.getVersion() ) && altSnapshotDeploymentRepository != null )
+        {
+            altDeploymentRepo = altSnapshotDeploymentRepository;
+        }
+        else if ( !ArtifactUtils.isSnapshot( project.getVersion() ) && altReleaseDeploymentRepository != null )
+        {
+            altDeploymentRepo = altReleaseDeploymentRepository;
+        }
+        else
+        {
+            altDeploymentRepo = altDeploymentRepository;
+        }
+
+        if ( altDeploymentRepo != null )
+        {
+            getLog().info( "Using alternate deployment repository " + altDeploymentRepo );
+
+            Matcher matcher = ALT_REPO_SYNTAX_PATTERN.matcher( altDeploymentRepo );
+
+            if ( !matcher.matches() )
+            {
+                throw new MojoFailureException( altDeploymentRepo, "Invalid syntax for repository.",
+                                                "Invalid syntax for alternative repository. Use \"id::layout::url\"." );
+            }
+            else
+            {
+                String id = matcher.group( 1 ).trim();
+                String layout = matcher.group( 2 ).trim();
+                String url = matcher.group( 3 ).trim();
+
+                ArtifactRepositoryLayout repoLayout = getLayout( layout );
+
+                repo = repositoryFactory.createDeploymentArtifactRepository( id, url, repoLayout, true );
+            }
+        }
+
+        if ( repo == null )
+        {
+            repo = project.getDistributionManagementArtifactRepository();
+        }
+
+        if ( repo == null )
+        {
+            String msg =
+                "Deployment failed: repository element was not specified in the POM inside"
+                    + " distributionManagement element or in -DaltDeploymentRepository=id::layout::url parameter";
+
+            throw new MojoExecutionException( msg );
+        }
+
+        return repo;
+    }
 }

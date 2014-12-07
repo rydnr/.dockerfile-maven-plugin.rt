@@ -502,6 +502,13 @@ public class DockerfileMojo
 
                     @NotNull final ArtifactRepositoryLayout layout = getLayout("default");
 
+                    ArtifactRepository repo =
+                        getDeploymentRepository(
+                            targetProject,
+                            request.getAltDeploymentRepository(),
+                            request.getAltReleaseDeploymentRepository(),
+                            request.getAltSnapshotDeploymentRepository() );
+
                     @NotNull final ArtifactRepository deploymentRepository =
                         repositoryFactory.createDeploymentArtifactRepository(
                             repositoryId, url, layout, uniqueVersion);

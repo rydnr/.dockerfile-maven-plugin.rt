@@ -95,6 +95,11 @@ public class DockerfileMojo
     extends AbstractDeployMojo
 {
     /**
+     * The repo syntax pattern.
+     */
+    private static final Pattern ALT_REPO_SYNTAX_PATTERN = Pattern.compile( "(.+)::(.+)::(.+)" );
+
+    /**
      * The location of pom.properties within the jar file.
      */
     protected static final String POM_PROPERTIES_LOCATION =

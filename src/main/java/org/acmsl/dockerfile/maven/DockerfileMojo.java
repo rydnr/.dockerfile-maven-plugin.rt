@@ -542,7 +542,13 @@ public class DockerfileMojo
             {
                 try
                 {
-                    @NotNull final Artifact artifact = buildArtifact(dockerfile);
+                    @NotNull final Artifact artifact =
+                        artifactFactory.createArtifactWithClassifier(
+                            targetProject.getGroupId(),
+                            targetProject.getArtifactId(),
+                            targetProject.getVersion(),
+                            "",
+                            "Dockerfile");
 
                     @NotNull final ArtifactRepositoryLayout layout = getLayout("default");
 

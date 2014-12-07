@@ -41,7 +41,9 @@ import org.acmsl.commons.utils.io.FileUtils;
  * Importing some Maven classes.
  */
 import org.apache.maven.artifact.Artifact;
-import org.apache.maven.artifact.ArtifactDeploymentException;
+import org.apache.maven.artifact.deployer.ArtifactDeployer;
+import org.apache.maven.artifact.deployer.ArtifactDeploymentException;
+import org.apache.maven.artifact.factory.ArtifactFactory;
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.deploy.AbstractDeployMojo;

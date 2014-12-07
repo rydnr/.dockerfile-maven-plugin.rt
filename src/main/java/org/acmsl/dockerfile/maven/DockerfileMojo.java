@@ -307,6 +307,25 @@ public class DockerfileMojo
     }
 
     /**
+     * Retrieves the layout.
+     * @param id the id.
+     * @return the layout.
+     */
+    @NotNull
+    public ArtifactRepositoryLayout getLayout(@NotNull final String id)
+        throws MojoExecutionException
+    {
+        @Nullable final ArtifactRepositoryLayout result = repositoryLayouts.get(id);
+
+        if (result == null)
+        {
+            throw new MojoExecutionException( "Invalid repository layout: " + id );
+        }
+
+        return result;
+    }
+
+    /**
      * Executes Dockerfile Maven plugin.
      * @throws org.apache.maven.plugin.MojoExecutionException if the process fails.
      */

@@ -542,7 +542,7 @@ public class DockerfileMojo
             {
                 try
                 {
-                    @NotNull final Artifact artifact = null; //buildArtifact(dockerfile);
+                    @NotNull final Artifact artifact = buildArtifact(dockerfile);
 
                     @NotNull final ArtifactRepositoryLayout layout = getLayout("default");
 

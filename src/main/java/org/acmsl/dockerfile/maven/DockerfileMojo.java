@@ -136,6 +136,12 @@ public class DockerfileMojo
     private boolean uniqueVersion;
 
     /**
+     * Map that contains the layouts.
+     */
+    @Component( role = ArtifactRepositoryLayout.class )
+    private Map<String, ArtifactRepositoryLayout> repositoryLayouts;
+
+    /**
      * The current build session instance. This is used for toolchain manager API calls.
      * @readonly
      */

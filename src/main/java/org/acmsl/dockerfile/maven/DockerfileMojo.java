@@ -166,6 +166,41 @@ public class DockerfileMojo
     ArtifactRepositoryFactory repositoryFactory;
 
     /**
+     * Specifies an alternative repository to which the project artifacts should be deployed ( other than those
+     * specified in &lt;distributionManagement&gt; ). <br/>
+     * Format: id::layout::url
+     * <dl>
+     * <dt>id</dt>
+     * <dd>The id can be used to pick up the correct credentials from the settings.xml</dd>
+     * <dt>layout</dt>
+     * <dd>Either <code>default</code> for the Maven2 layout or <code>legacy</code> for the Maven1 layout. Maven3 also
+     * uses the <code>default</code> layout.</dd>
+     * <dt>url</dt>
+     * <dd>The location of the repository</dd>
+     * </dl>
+     */
+    @Parameter( property = "altDeploymentRepository" )
+    private String altDeploymentRepository;
+
+    /**
+     * The alternative repository to use when the project has a snapshot version.
+     * 
+     * @since 2.8
+     * @see DeployMojo#altDeploymentRepository
+     */
+    @Parameter( property = "altSnapshotDeploymentRepository" )
+    private String altSnapshotDeploymentRepository;
+
+    /**
+     * The alternative repository to use when the project has a final version.
+     * 
+     * @since 2.8
+     * @see DeployMojo#altDeploymentRepository
+     */
+    @Parameter( property = "altReleaseDeploymentRepository" )
+    private String altReleaseDeploymentRepository;
+
+    /**
      * Specifies the output directory.
      * @param outputDir such directory.
      */

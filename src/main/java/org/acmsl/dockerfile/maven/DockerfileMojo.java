@@ -401,15 +401,18 @@ public class DockerfileMojo
 
             running = true;
 
+            @NotNull File dockerfile = null;
+
             try
             {
-                generateDockerfile(
-                    outputDir,
-                    template,
-                    targetProject,
-                    ownVersion,
-                    actualEncoding,
-                    FileUtils.getInstance());
+                dockerfile =
+                    generateDockerfile(
+                        outputDir,
+                        template,
+                        targetProject,
+                        ownVersion,
+                        actualEncoding,
+                        FileUtils.getInstance());
             }
             catch (@NotNull final SecurityException securityException)
             {

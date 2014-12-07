@@ -419,6 +419,18 @@ public class DockerfileMojo
             {
                 log.error("Cannot write output file in " + outputDir.getAbsolutePath(), ioException);
             }
+
+            if (true) // deploy
+            {
+                try
+                {
+                    deploy(attached.getFile(), attached, deploymentRepository, getLocalRepository(), getRetryFailedDeploymentCount());
+                }
+                catch (final ArtifactDeploymentException e)
+                {
+                    throw new MojoExecutionException("Error deploying Dockerfile", e);
+                }
+            }
         }
 
         if (!running)

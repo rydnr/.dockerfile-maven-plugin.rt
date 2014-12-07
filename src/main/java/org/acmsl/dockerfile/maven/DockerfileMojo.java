@@ -80,7 +80,7 @@ import org.checkthread.annotations.ThreadSafe;
 @ThreadSafe
 @Mojo(name = Literals.DOCKERFILE_L, defaultPhase = LifecyclePhase.GENERATE_SOURCES, threadSafe = true, executionStrategy = "once-per-session")
 public class DockerfileMojo
-    extends AbstractMojo
+    extends AbstractDeployMojo
 {
     /**
      * The location of pom.properties within the jar file.

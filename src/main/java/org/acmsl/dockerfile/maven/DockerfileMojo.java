@@ -564,7 +564,11 @@ public class DockerfileMojo
                         getLocalRepository(),
                         3); //getRetryFailedDeploymentCount());
                 }
-                catch (final ArtifactDeploymentException e)
+                catch (@NotNull final ArtifactDeploymentException e)
+                {
+                    throw new MojoExecutionException("Error deploying Dockerfile", e);
+                }
+                catch (@NotNull final MojoFailureException e)
                 {
                     throw new MojoExecutionException("Error deploying Dockerfile", e);
                 }

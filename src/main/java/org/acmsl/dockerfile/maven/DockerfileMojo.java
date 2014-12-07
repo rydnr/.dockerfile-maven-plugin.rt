@@ -434,9 +434,9 @@ public class DockerfileMojo
                 {
                     @NotNull final Artifact artifact = buildArtifact(dockerfile);
 
-                    ArtifactRepositoryLayout layout = getLayout( repositoryLayout );
+                    @NotNull final ArtifactRepositoryLayout layout = getLayout( repositoryLayout );
 
-                    ArtifactRepository deploymentRepository =
+                    @NotNull final ArtifactRepository deploymentRepository =
                         repositoryFactory.createDeploymentArtifactRepository(
                             repositoryId, url, layout, uniqueVersion );
 

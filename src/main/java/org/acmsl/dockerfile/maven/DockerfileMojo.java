@@ -540,9 +540,9 @@ public class DockerfileMojo
                     ArtifactRepository repo =
                         getDeploymentRepository(
                             targetProject,
-                            request.getAltDeploymentRepository(),
-                            request.getAltReleaseDeploymentRepository(),
-                            request.getAltSnapshotDeploymentRepository() );
+                            altDeploymentRepository,
+                            altReleaseDeploymentRepository,
+                            altSnapshotDeploymentRepository);
 
                     @NotNull final ArtifactRepository deploymentRepository =
                         repositoryFactory.createDeploymentArtifactRepository(

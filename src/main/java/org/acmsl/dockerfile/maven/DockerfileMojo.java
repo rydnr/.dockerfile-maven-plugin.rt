@@ -119,6 +119,23 @@ public class DockerfileMojo
     private MavenSession session;
 
     /**
+     */
+    @Component
+    private ArtifactDeployer deployer;
+
+    /**
+     * Component used to create an artifact.
+     */
+    @Component
+    protected ArtifactFactory artifactFactory;
+
+    /**
+     * Component used to create a repository.
+     */
+    @Component
+    ArtifactRepositoryFactory repositoryFactory;
+
+    /**
      * Specifies the output directory.
      * @param outputDir such directory.
      */

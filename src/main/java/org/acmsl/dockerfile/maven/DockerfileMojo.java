@@ -97,7 +97,7 @@ public class DockerfileMojo
     /**
      * The repo syntax pattern.
      */
-    private static final Pattern ALT_REPO_SYNTAX_PATTERN = Pattern.compile( "(.+)::(.+)::(.+)" );
+    private static final Pattern ALT_REPO_SYNTAX_PATTERN = Pattern.compile("(.+)::(.+)::(.+)");
 
     /**
      * The location of pom.properties within the jar file.

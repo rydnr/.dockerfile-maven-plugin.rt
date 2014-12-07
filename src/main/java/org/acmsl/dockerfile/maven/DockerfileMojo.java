@@ -122,6 +122,12 @@ public class DockerfileMojo
     private String repositoryId;
 
     /**
+     * The type of remote repository layout to deploy to. Try <i>legacy</i> for a Maven 1.x-style repository layout.
+     */
+    @Parameter(property = "repositoryLayout", defaultValue = "default")
+    private String repositoryLayout;
+
+    /**
      * URL where the artifact will be deployed.
      * ie ( file:///C:/m2-repo or scp://host.com/path/to/repo )
      */

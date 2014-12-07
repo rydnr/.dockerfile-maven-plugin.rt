@@ -439,7 +439,7 @@ public class DockerfileMojo
                         artifact,
                         deploymentRepository,
                         getLocalRepository(),
-                        getRetryFailedDeploymentCount());
+                        3); //getRetryFailedDeploymentCount());
                 }
                 catch (final ArtifactDeploymentException e)
                 {

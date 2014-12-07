@@ -115,6 +115,13 @@ public class DockerfileMojo
     private String m__strEncoding;
 
     /**
+     * URL where the artifact will be deployed. <br/>
+     * ie ( file:///C:/m2-repo or scp://host.com/path/to/repo )
+     */
+    @Parameter( property = "url", required = true )
+    private String url;
+
+    /**
      * The current build session instance. This is used for toolchain manager API calls.
      * @readonly
      */

@@ -159,8 +159,8 @@ public class DockerfileMojo
 
     /**
      */
-    @Component
-    private ArtifactDeployer deployer;
+//    @Component
+//    private ArtifactDeployer deployer;
 
     /**
      * Component used to create an artifact.

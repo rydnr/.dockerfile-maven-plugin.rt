@@ -148,7 +148,7 @@ public class DockerfileMojo
      * Whether to deploy snapshots with a unique version or not.
      */
     @Parameter(property = Literals.UNIQUE_VERSION_L, defaultValue = "true" )
-    private boolean uniqueVersion;
+    private boolean m__bUniqueVersion;
 
     /**
      * The Dockerfile classifier.

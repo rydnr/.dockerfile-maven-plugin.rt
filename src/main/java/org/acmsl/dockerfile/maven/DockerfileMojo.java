@@ -151,14 +151,14 @@ public class DockerfileMojo
     private boolean uniqueVersion;
 
     /**
-     * The file encoding.
+     * The Dockerfile classifier.
      */
-    @Parameter(name = Literals.ENCODING_L,
-               property = Literals.ENCODING_L,
+    @Parameter(name = Literals.CLASSIFIER_L,
+               property = Literals.CLASSIFIER_L,
                required = false,
-               defaultValue = "${project.build.sourceEncoding}")
+               defaultValue = "Dockerfile")
     @NotNull
-    private String m__strEncoding;
+    private String m__strClassifier;
 
     /**
      * Map that contains the layouts.

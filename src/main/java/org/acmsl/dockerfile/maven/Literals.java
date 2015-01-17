@@ -159,12 +159,12 @@ public class Literals
     public static final String DOCKERFILE_CLASSIFIER = "dockerfile.classifier";
 
     /**
-     * String literal: "retryFailedDeploymentCount".
+     * String literal: "deploymentRetries".
      */
-    public static final String RETRY_FAILED_DEPLOYMENT_COUNT = "retryFailedDeploymentCount";
+    public static final String DEPLOYMENT_RETRIES = "deploymentRetries";
 
     /**
-     * String literal: "dockerfile.retryFailedDeploymentCount".
+     * String literal: "dockerfile.deploymentRetries".
      */
-    public static final String DOCKERFILE_RETRY_FAILED_DEPLOYMENT_COUNT = "dockerfile.retryFailedDeploymentCount";
+    public static final String DOCKERFILE_DEPLOYMENT_RETRIES = "dockerfile.deploymentRetries";
 }

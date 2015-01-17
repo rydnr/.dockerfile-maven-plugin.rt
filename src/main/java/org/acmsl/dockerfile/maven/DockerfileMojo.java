@@ -513,7 +513,7 @@ public class DockerfileMojo
                 log.error("Cannot write output file in " + outputDir.getAbsolutePath(), ioException);
             }
 
-            if (true) // deploy
+            if (deploy)
             {
                 try
                 {

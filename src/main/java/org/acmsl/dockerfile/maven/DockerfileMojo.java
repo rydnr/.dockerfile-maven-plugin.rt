@@ -140,7 +140,7 @@ public class DockerfileMojo
     @Parameter(name = Literals.DEPLOY_L,
                property = Literals.DEPLOY_L,
                required = false,
-               defaultValue = Boolean.FALSE)
+               defaultValue = "true")
     @Nullable
     private boolean m__bDeploy;
 

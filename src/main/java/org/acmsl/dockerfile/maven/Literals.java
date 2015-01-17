@@ -127,4 +127,10 @@ public class Literals
      * String literal: "dockerfile.encoding".
      */
     public static final String DOCKERFILE_ENCODING = "dockerfile.encoding";
+
+    /**
+     * String literal: "deploy".
+     */
+    public static final String DEPLOY_L = "deploy";
+
 }

@@ -168,6 +168,7 @@ public class DockerfileMojo
      * Component used to create and deploy the Dockerfile artifact.
      */
     @Component
+    @NotNull
     protected RepositorySystem repositorySystem;
 
     /**
@@ -191,6 +192,7 @@ public class DockerfileMojo
      * </dl>
      */
     @Parameter(property = "altDeploymentRepository")
+    @Nullable
     private String altDeploymentRepository;
 
     /**
@@ -198,6 +200,7 @@ public class DockerfileMojo
      * @since 2.8
      */
     @Parameter(property = "altSnapshotDeploymentRepository")
+    @Nullable
     private String altSnapshotDeploymentRepository;
 
     /**
@@ -205,6 +208,7 @@ public class DockerfileMojo
      * @since 2.8
      */
     @Parameter(property = "altReleaseDeploymentRepository")
+    @Nullable
     private String altReleaseDeploymentRepository;
 
     /**
@@ -358,7 +362,7 @@ public class DockerfileMojo
      * Specifies whether to deploy the Dockerfile or not.
      * @param deploy such condition.
      */
-    protected final void immutableSetDeploy(@NotNull final Boolean deploy)
+    protected final void immutableSetDeploy(final boolean deploy)
     {
         m__bDeploy = deploy;
     }
@@ -367,7 +371,7 @@ public class DockerfileMojo
      * Specifies whether to deploy the Dockerfile or not.
      * @param deploy such condition.
      */
-    public void setDeploy(@NotNull final Boolean deploy)
+    public void setDeploy(final boolean deploy)
     {
         immutableSetDeploy(deploy);
     }
@@ -376,8 +380,7 @@ public class DockerfileMojo
      * Retrieves whether to deploy the Dockerfile or not.
      * @return such information.
      */
-    @Nullable
-    protected final Boolean immutableGetDeploy()
+    protected final boolean immutableGetDeploy()
     {
         return m__bDeploy;
     }
@@ -386,16 +389,64 @@ public class DockerfileMojo
      * Retrieves whether to deploy the Dockerfile or not.
      * @return such information.
      */
-    @Nullable
-    public Boolean getDeploy()
+    public boolean getDeploy()
     {
-        @Nullable final Boolean result;
+        @Nullable final boolean result;
 
-        @Nullable String property = System.getProperty(Literals.DOCKERFILE_DEPLOY);
+        @Nullable final String property = System.getProperty(Literals.DOCKERFILE_DEPLOY);
 
         if (property == null)
         {
             result = immutableGetDeploy();
+        }
+        else
+        {
+            result = Boolean.valueOf(property);
+        }
+
+        return result;
+    }
+
+    /**
+     * Specifies whether to uniqueVersion the Dockerfile or not.
+     * @param uniqueVersion such condition.
+     */
+    protected final void immutableSetUniqueVersion(final boolean uniqueVersion)
+    {
+        m__bUniqueVersion = uniqueVersion;
+    }
+
+    /**
+     * Specifies whether to uniqueVersion the Dockerfile or not.
+     * @param uniqueVersion such condition.
+     */
+    public void setUniqueVersion(final boolean uniqueVersion)
+    {
+        immutableSetUniqueVersion(uniqueVersion);
+    }
+
+    /**
+     * Retrieves whether to uniqueVersion the Dockerfile or not.
+     * @return such information.
+     */
+    protected final boolean immutableGetUniqueVersion()
+    {
+        return m__bUniqueVersion;
+    }
+
+    /**
+     * Retrieves whether to uniqueVersion the Dockerfile or not.
+     * @return such information.
+     */
+    public boolean getUniqueVersion()
+    {
+        @Nullable final boolean result;
+
+        @Nullable final String property = System.getProperty(Literals.DOCKERFILE_UNIQUE_VERSION_L);
+
+        if (property == null)
+        {
+            result = immutableGetUniqueVersion();
         }
         else
         {

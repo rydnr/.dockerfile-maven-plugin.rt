@@ -158,4 +158,13 @@ public class Literals
      */
     public static final String DOCKERFILE_CLASSIFIER = "dockerfile.classifier";
 
+    /**
+     * String literal: "retryFailedDeploymentCount".
+     */
+    public static final String RETRY_FAILED_DEPLOYMENT_COUNT = "retryFailedDeploymentCount";
+
+    /**
+     * String literal: "dockerfile.retryFailedDeploymentCount".
+     */
+    public static final String DOCKERFILE_RETRY_FAILED_DEPLOYMENT_COUNT = "dockerfile.retryFailedDeploymentCount";
 }

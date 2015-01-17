@@ -131,7 +131,7 @@ public class DockerfileMojo
                property = Literals.ENCODING_L,
                required = false,
                defaultValue = "${project.build.sourceEncoding}")
-    @Nullable
+    @NotNull
     private String m__strEncoding;
 
     /**
@@ -149,6 +149,16 @@ public class DockerfileMojo
      */
     @Parameter(property = Literals.UNIQUE_VERSION_L, defaultValue = "true" )
     private boolean uniqueVersion;
+
+    /**
+     * The file encoding.
+     */
+    @Parameter(name = Literals.ENCODING_L,
+               property = Literals.ENCODING_L,
+               required = false,
+               defaultValue = "${project.build.sourceEncoding}")
+    @NotNull
+    private String m__strEncoding;
 
     /**
      * Map that contains the layouts.

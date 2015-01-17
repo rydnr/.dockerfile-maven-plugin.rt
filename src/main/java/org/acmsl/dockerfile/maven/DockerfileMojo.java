@@ -525,7 +525,7 @@ public class DockerfileMojo
      * Specifies how many times a failed deployment will be retried before giving up.
      * @param retryFailedDeploymentCount such count.
      */
-    protected final void immutableSetRetryFailedDeploymentCount(final boolean retryFailedDeploymentCount)
+    protected final void immutableSetRetryFailedDeploymentCount(final int retryFailedDeploymentCount)
     {
         m__iRetryFailedDeploymentCount = retryFailedDeploymentCount;
     }
@@ -534,7 +534,7 @@ public class DockerfileMojo
      * Specifies how many times a failed deployment will be retried before giving up.
      * @param retryFailedDeploymentCount such count.
      */
-    public void setRetryFailedDeploymentCount(final boolean retryFailedDeploymentCount)
+    public void setRetryFailedDeploymentCount(final int retryFailedDeploymentCount)
     {
         immutableSetRetryFailedDeploymentCount(retryFailedDeploymentCount);
     }

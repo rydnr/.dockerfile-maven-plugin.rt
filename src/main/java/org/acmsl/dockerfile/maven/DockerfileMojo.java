@@ -520,6 +520,56 @@ public class DockerfileMojo
         return result;
     }
 
+
+    /**
+     * Specifies how many times a failed deployment will be retried before giving up.
+     * @param retryFailedDeploymentCount such count.
+     */
+    protected final void immutableSetRetryFailedDeploymentCount(final boolean retryFailedDeploymentCount)
+    {
+        m__bRetryFailedDeploymentCount = retryFailedDeploymentCount;
+    }
+
+    /**
+     * Specifies how many times a failed deployment will be retried before giving up.
+     * @param retryFailedDeploymentCount such count.
+     */
+    public void setRetryFailedDeploymentCount(final boolean retryFailedDeploymentCount)
+    {
+        immutableSetRetryFailedDeploymentCount(retryFailedDeploymentCount);
+    }
+
+    /**
+     * Retrieves how many times a failed deployment will be retried before giving up.
+     * @return such information.
+     */
+    protected final boolean immutableGetRetryFailedDeploymentCount()
+    {
+        return m__bRetryFailedDeploymentCount;
+    }
+
+    /**
+     * Retrieves how many times a failed deployment will be retried before giving up.
+     * @return such information.
+     */
+    public boolean getRetryFailedDeploymentCount()
+    {
+        @Nullable final boolean result;
+
+        @Nullable final String property = System.getProperty(Literals.DOCKERFILE_RETRY_FAILED_DEPLOYMENT_COUNT);
+
+        if (property == null)
+        {
+            result = immutableGetRetryFailedDeploymentCount();
+        }
+        else
+        {
+            result = Boolean.valueOf(property);
+        }
+
+        return result;
+    }
+
     /**
      * Retrieves the layout.
      * @param id the id.

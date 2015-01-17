@@ -148,4 +148,14 @@ public class Literals
      */
     public static final String DOCKERFILE_UNIQUE_VERSION = "dockerfile.uniqueVersion";
 
+    /**
+     * String literal: "classifier".
+     */
+    public static final String CLASSIFIER_L = "classifier";
+
+    /**
+     * String literal: "dockerfile.classifier".
+     */
+    public static final String CLASSIFIER_DEPLOY = "dockerfile.classifier";
+
 }

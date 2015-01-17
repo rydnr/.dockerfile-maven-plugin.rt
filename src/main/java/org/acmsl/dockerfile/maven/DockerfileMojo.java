@@ -166,7 +166,7 @@ public class DockerfileMojo
     @Parameter(name = Literals.RETRY_FAILED_DEPLOYMENT_COUNT,
                property = Literals.RETRY_FAILED_DEPLOYMENT_COUNT,
                required = false,
-               defaultValue = 1)
+               defaultValue = "1")
     private int m__iRetryFailedDeploymentCount;
     
     /**

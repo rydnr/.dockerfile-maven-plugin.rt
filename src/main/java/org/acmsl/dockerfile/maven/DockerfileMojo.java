@@ -559,7 +559,7 @@ public class DockerfileMojo
 
         if (property == null)
         {
-            result = immutableGetRetryFailedDeploymentCount();
+            result = immutableGetDeploymenRetries();
         }
         else
         {

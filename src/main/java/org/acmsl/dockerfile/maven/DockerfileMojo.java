@@ -527,7 +527,7 @@ public class DockerfileMojo
      */
     protected final void immutableSetRetryFailedDeploymentCount(final boolean retryFailedDeploymentCount)
     {
-        m__bRetryFailedDeploymentCount = retryFailedDeploymentCount;
+        m__iRetryFailedDeploymentCount = retryFailedDeploymentCount;
     }
 
     /**
@@ -543,9 +543,9 @@ public class DockerfileMojo
      * Retrieves how many times a failed deployment will be retried before giving up.
      * @return such information.
      */
-    protected final boolean immutableGetRetryFailedDeploymentCount()
+    protected final int immutableGetRetryFailedDeploymentCount()
     {
-        return m__bRetryFailedDeploymentCount;
+        return m__iRetryFailedDeploymentCount;
     }
 
     /**

@@ -393,7 +393,7 @@ public class DockerfileMojo
     {
         @Nullable final boolean result;
 
-        @Nullable final String property = System.getProperty(Literals.DOCKERFILE_DEPLOY_L);
+        @Nullable final String property = System.getProperty(Literals.DOCKERFILE_DEPLOY);
 
         if (property == null)
         {

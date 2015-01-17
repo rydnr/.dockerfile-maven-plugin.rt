@@ -552,9 +552,9 @@ public class DockerfileMojo
      * Retrieves how many times a failed deployment will be retried before giving up.
      * @return such information.
      */
-    public boolean getRetryFailedDeploymentCount()
+    public int getRetryFailedDeploymentCount()
     {
-        @Nullable final boolean result;
+        @Nullable final int result;
 
         @Nullable final String property = System.getProperty(Literals.DOCKERFILE_RETRY_FAILED_DEPLOYMENT_COUNT);
 
@@ -564,7 +564,7 @@ public class DockerfileMojo
         }
         else
         {
-            result = Boolean.valueOf(property);
+            result = Integer.valueOf(property);
         }
 
         return result;

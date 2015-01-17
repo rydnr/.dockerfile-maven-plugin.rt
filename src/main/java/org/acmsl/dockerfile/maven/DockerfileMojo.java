@@ -419,6 +419,7 @@ public class DockerfileMojo
      * @param outputDir the output dir.
      * @param template the template.
      * @param encoding the file encoding.
+     * @param deploy whether to deploy the Dockerfile or not.
      * @throws MojoExecutionException if the process fails.
      */
     protected void execute(
@@ -427,7 +428,8 @@ public class DockerfileMojo
         @NotNull final MavenProject targetProject,
         @Nullable final File outputDir,
         @Nullable final File template,
-        @Nullable final String encoding)
+        @Nullable final String encoding
+        final boolean deploy)
       throws MojoExecutionException
     {
         boolean running = false;

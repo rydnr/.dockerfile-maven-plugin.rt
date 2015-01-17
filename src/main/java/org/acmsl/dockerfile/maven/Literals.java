@@ -133,4 +133,9 @@ public class Literals
      */
     public static final String DEPLOY_L = "deploy";
 
+    /**
+     * String literal: "uniqueVersion".
+     */
+    public static final String UNIQUE_VERSION_L = "uniqueVersion";
+
 }

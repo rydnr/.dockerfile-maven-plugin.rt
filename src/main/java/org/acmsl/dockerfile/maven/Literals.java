@@ -156,6 +156,6 @@ public class Literals
     /**
      * String literal: "dockerfile.classifier".
      */
-    public static final String CLASSIFIER_DEPLOY = "dockerfile.classifier";
+    public static final String DOCKERFILE_CLASSIFIER = "dockerfile.classifier";
 
 }

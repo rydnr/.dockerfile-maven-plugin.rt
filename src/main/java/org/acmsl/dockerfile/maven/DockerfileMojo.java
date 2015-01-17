@@ -428,7 +428,7 @@ public class DockerfileMojo
         @NotNull final MavenProject targetProject,
         @Nullable final File outputDir,
         @Nullable final File template,
-        @Nullable final String encoding
+        @Nullable final String encoding,
         final boolean deploy)
       throws MojoExecutionException
     {

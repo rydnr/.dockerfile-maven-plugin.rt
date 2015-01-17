@@ -161,6 +161,15 @@ public class DockerfileMojo
     private String m__strClassifier;
 
     /**
+     * The number of retries when deployment fails.
+     */
+    @Parameter(name = Literals.RETRY_FAILED_DEPLOYMENT_COUNT,
+               property = Literals.RETRY_FAILED_DEPLOYMENT_COUNT,
+               required = false,
+               defaultValue = 1)
+    private int m__iRetryFailedDeploymentCount;
+    
+    /**
      * Map that contains the layouts.
      */
     @Component( role = ArtifactRepositoryLayout.class )

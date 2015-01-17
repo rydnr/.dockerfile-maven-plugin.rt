@@ -147,8 +147,8 @@ public class DockerfileMojo
     /**
      * Whether to deploy snapshots with a unique version or not.
      */
-    @Parameter(property = Literals.UNIQUE_VERSIONS_L, defaultValue = "true" )
-    private boolean uniqueVersions;
+    @Parameter(property = Literals.UNIQUE_VERSION_L, defaultValue = "true" )
+    private boolean uniqueVersion;
 
     /**
      * The file encoding.

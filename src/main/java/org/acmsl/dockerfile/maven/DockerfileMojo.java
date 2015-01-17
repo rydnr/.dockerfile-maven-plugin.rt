@@ -89,7 +89,10 @@ import org.checkthread.annotations.ThreadSafe;
  */
 @SuppressWarnings("unused")
 @ThreadSafe
-@Mojo(name = Literals.DOCKERFILE_L, defaultPhase = LifecyclePhase.GENERATE_SOURCES, threadSafe = true, executionStrategy = "once-per-session")
+@Mojo(name = Literals.DOCKERFILE_L,
+      defaultPhase = LifecyclePhase.GENERATE_SOURCES,
+      threadSafe = true,
+      executionStrategy = "once-per-session")
 public class DockerfileMojo
     extends AbstractDeployMojo
 {
@@ -107,7 +110,10 @@ public class DockerfileMojo
     /**
      * The output directory.
      */
-    @Parameter (name = Literals.OUTPUT_DIR_CC, property = Literals.OUTPUT_DIR_CC, required = false, defaultValue = "${project.build.outputDirectory}/META-INF/")
+    @Parameter(name = Literals.OUTPUT_DIR_CC,
+               property = Literals.OUTPUT_DIR_CC,
+               required = false,
+               defaultValue = "${project.build.outputDirectory}/META-INF/")
     private File m__OutputDir;
 
     /**
@@ -119,7 +125,10 @@ public class DockerfileMojo
     /**
      * The file encoding.
      */
-    @Parameter (name = Literals.ENCODING_L, property = Literals.ENCODING_L, required = false, defaultValue = "${project.build.sourceEncoding}")
+    @Parameter(name = Literals.ENCODING_L,
+               property = Literals.ENCODING_L,
+               required = false,
+               defaultValue = "${project.build.sourceEncoding}")
     private String m__strEncoding;
 
     /**
@@ -167,21 +176,21 @@ public class DockerfileMojo
      * <dd>The location of the repository</dd>
      * </dl>
      */
-    @Parameter( property = "altDeploymentRepository" )
+    @Parameter(property = "altDeploymentRepository")
     private String altDeploymentRepository;
 
     /**
      * The alternative repository to use when the project has a snapshot version.
      * @since 2.8
      */
-    @Parameter( property = "altSnapshotDeploymentRepository" )
+    @Parameter(property = "altSnapshotDeploymentRepository")
     private String altSnapshotDeploymentRepository;
 
     /**
      * The alternative repository to use when the project has a final version.
      * @since 2.8
      */
-    @Parameter( property = "altReleaseDeploymentRepository" )
+    @Parameter(property = "altReleaseDeploymentRepository")
     private String altReleaseDeploymentRepository;
 
     /**

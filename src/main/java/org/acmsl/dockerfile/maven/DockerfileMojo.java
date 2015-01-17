@@ -114,12 +114,14 @@ public class DockerfileMojo
                property = Literals.OUTPUT_DIR_CC,
                required = false,
                defaultValue = "${project.build.outputDirectory}/META-INF/")
+    @Nullable
     private File m__OutputDir;
 
     /**
      * The output directory.
      */
     @Parameter (name = Literals.TEMPLATE_L, property = Literals.TEMPLATE_L, required = true)
+    @NotNull
     private File m__Template;
 
     /**

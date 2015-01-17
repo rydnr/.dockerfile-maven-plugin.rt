@@ -617,7 +617,8 @@ public class DockerfileMojo
             getEncoding(),
             getDeploy(),
             getUniqueVersion(),
-            getClassifier());
+            getClassifier(),
+            getRetryFailedDeploymentCount());
     }
 
     /**
@@ -664,6 +665,7 @@ public class DockerfileMojo
      * @param deploy whether to deploy the Dockerfile or not.
      * @param uniqueVersion whether to use unique versions when deploying the Dockerfile or not.
      * @param classifier the Dockerfile classifier.
+     * @param retryFailedDeploymentCount how many times a failed deployment will be retried before giving up.
      * @throws MojoExecutionException if the process fails.
      */
     protected void execute(
@@ -675,7 +677,8 @@ public class DockerfileMojo
         @NotNull final String encoding,
         final boolean deploy,
         final boolean uniqueVersions,
-        @NotNull final String classifier)
+        @NotNull final String classifier,
+        final int retryFailedDeploymentCount)
       throws MojoExecutionException
     {
         boolean running = false;

@@ -442,7 +442,7 @@ public class DockerfileMojo
     {
         @Nullable final boolean result;
 
-        @Nullable final String property = System.getProperty(Literals.DOCKERFILE_UNIQUE_VERSION_L);
+        @Nullable final String property = System.getProperty(Literals.DOCKERFILE_UNIQUE_VERSION);
 
         if (property == null)
         {

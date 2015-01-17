@@ -501,7 +501,8 @@ public class DockerfileMojo
             getOutputDir(),
             getTemplate(),
             getEncoding(),
-            getDeploy());
+            getDeploy(),
+            getUniqueVersion());
     }
 
     /**
@@ -546,6 +547,7 @@ public class DockerfileMojo
      * @param template the template.
      * @param encoding the file encoding.
      * @param deploy whether to deploy the Dockerfile or not.
+     * @param uniqueVersion whether to use unique versions when deploying the Dockerfile or not.
      * @throws MojoExecutionException if the process fails.
      */
     protected void execute(
@@ -555,7 +557,8 @@ public class DockerfileMojo
         @Nullable final File outputDir,
         @Nullable final File template,
         @Nullable final String encoding,
-        final boolean deploy)
+        final boolean deploy,
+        final boolean uniqueVersions)
       throws MojoExecutionException
     {
         boolean running = false;
@@ -662,7 +665,7 @@ public class DockerfileMojo
 
                     @NotNull final ArtifactRepository deploymentRepository =
                         repositoryFactory.createDeploymentArtifactRepository(
-                            repo.getId(), repo.getUrl(), getLayout("default"), uniqueVersion);
+                            repo.getId(), repo.getUrl(), getLayout("default"), uniqueVersions);
 
                     deploy(
                         dockerfile,

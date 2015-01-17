@@ -164,7 +164,7 @@ public class DockerfileMojo
      * Map that contains the layouts.
      */
     @Component( role = ArtifactRepositoryLayout.class )
-    @NotNul
+    @NotNull
     private Map<String, ArtifactRepositoryLayout> repositoryLayouts;
 
     /**

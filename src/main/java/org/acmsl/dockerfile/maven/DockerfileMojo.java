@@ -408,7 +408,7 @@ public class DockerfileMojo
     }
 
     /**
-     * Specifies whether to uniqueVersion the Dockerfile or not.
+     * Specifies whether to use unique versions when deploying the Dockerfile or not.
      * @param uniqueVersion such condition.
      */
     protected final void immutableSetUniqueVersion(final boolean uniqueVersion)

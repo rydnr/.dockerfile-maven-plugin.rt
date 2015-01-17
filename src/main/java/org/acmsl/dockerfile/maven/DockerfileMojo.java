@@ -384,7 +384,8 @@ public class DockerfileMojo
             retrieveTargetProject(),
             getOutputDir(),
             getTemplate(),
-            getEncoding());
+            getEncoding(),
+            getDeploy());
     }
 
     /**

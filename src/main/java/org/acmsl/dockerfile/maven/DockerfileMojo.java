@@ -129,7 +129,18 @@ public class DockerfileMojo
                property = Literals.ENCODING_L,
                required = false,
                defaultValue = "${project.build.sourceEncoding}")
+    @Nullable
     private String m__strEncoding;
+
+    /**
+     * Whether to deploy the Dockerfile or not.
+     */
+    @Parameter(name = Literals.DEPLOY_L,
+               property = Literals.DEPLOY_L,
+               required = false,
+               defaultValue = Boolean.FALSE)
+    @Nullable
+    private Boolean m__bDeploy;
 
     /**
      * Whether to deploy snapshots with a unique version or not.
@@ -335,6 +346,57 @@ public class DockerfileMojo
         if (result == null)
         {
             result = immutableGetEncoding();
+        }
+
+        return result;
+    }
+
+    /**
+     * Specifies whether to deploy the Dockerfile or not.
+     * @param deploy such condition.
+     */
+    protected final void immutableSetDeploy(@NotNull final Boolean deploy)
+    {
+        m__bDeploy = deploy;
+    }
+
+    /**
+     * Specifies whether to deploy the Dockerfile or not.
+     * @param deploy such condition.
+     */
+    public void setDeploy(@NotNull final Boolean deploy)
+    {
+        immutableSetDeploy(deploy);
+    }
+
+    /**
+     * Retrieves whether to deploy the Dockerfile or not.
+     * @return such information.
+     */
+    @Nullable
+    protected final Boolean immutableGetDeploy()
+    {
+        return m__bDeploy;
+    }
+
+    /**
+     * Retrieves whether to deploy the Dockerfile or not.
+     * @return such information.
+     */
+    @Nullable
+    public Boolean getDeploy()
+    {
+        @Nullable final Boolean result;
+
+        @Nullable String property = System.getProperty(Literals.DOCKERFILE_DEPLOY);
+
+        if (property == null)
+        {
+            result = immutableGetDeploy();
+        }
+        else
+        {
+            result = Boolean.valueOf(property);
         }
 
         return result;

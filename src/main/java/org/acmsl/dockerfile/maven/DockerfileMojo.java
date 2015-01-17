@@ -142,7 +142,7 @@ public class DockerfileMojo
                required = false,
                defaultValue = Boolean.FALSE)
     @Nullable
-    private Boolean m__bDeploy;
+    private boolean m__bDeploy;
 
     /**
      * Whether to deploy snapshots with a unique version or not.
@@ -154,6 +154,7 @@ public class DockerfileMojo
      * Map that contains the layouts.
      */
     @Component( role = ArtifactRepositoryLayout.class )
+    @NotNul
     private Map<String, ArtifactRepositoryLayout> repositoryLayouts;
 
     /**

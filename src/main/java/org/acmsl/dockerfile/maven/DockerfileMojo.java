@@ -123,20 +123,6 @@ public class DockerfileMojo
     private String m__strEncoding;
 
     /**
-     * Server Id to map on the &lt;id&gt; under &lt;server&gt; section of settings.xml In most cases, this parameter
-     * will be required for authentication.
-     */
-    @Parameter( property = "repositoryId", defaultValue = "remote-repository", required = true )
-    private String repositoryId;
-
-    /**
-     * URL where the artifact will be deployed.
-     * ie ( file:///C:/m2-repo or scp://host.com/path/to/repo )
-     */
-    @Parameter( property = "url", required = true )
-    private String url;
-
-    /**
      * Whether to deploy snapshots with a unique version or not.
      */
     @Parameter( property = "uniqueVersion", defaultValue = "true" )
@@ -156,12 +142,7 @@ public class DockerfileMojo
     private MavenSession session;
 
     /**
-     */
-//    @Component
-//    private ArtifactDeployer deployer;
-
-    /**
-     * Component used to create an artifact.
+     * Component used to create and deploy the Dockerfile artifact.
      */
     @Component
     protected RepositorySystem repositorySystem;

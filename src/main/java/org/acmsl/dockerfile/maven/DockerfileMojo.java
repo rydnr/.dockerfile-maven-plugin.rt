@@ -161,6 +161,15 @@ public class DockerfileMojo
     private String m__strClassifier;
 
     /**
+     * The number of retries when deployment fails.
+     */
+    @Parameter(name = Literals.DEPLOYMENT_RETRIES,
+               property = Literals.DEPLOYMENT_RETRIES,
+               required = false,
+               defaultValue = "1")
+    private int m__iRetryFailedDeploymentCount;
+    
+    /**
      * Map that contains the layouts.
      */
     @Component( role = ArtifactRepositoryLayout.class )
@@ -506,6 +515,56 @@ public class DockerfileMojo
         if (result == null)
         {
             result = immutableGetClassifier();
+        }
+
+        return result;
+    }
+
+
+    /**
+     * Specifies how many times a failed deployment will be retried before giving up.
+     * @param retryFailedDeploymentCount such count.
+     */
+    protected final void immutableSetRetryFailedDeploymentCount(final int retryFailedDeploymentCount)
+    {
+        m__iRetryFailedDeploymentCount = retryFailedDeploymentCount;
+    }
+
+    /**
+     * Specifies how many times a failed deployment will be retried before giving up.
+     * @param retryFailedDeploymentCount such count.
+     */
+    public void setRetryFailedDeploymentCount(final int retryFailedDeploymentCount)
+    {
+        immutableSetRetryFailedDeploymentCount(retryFailedDeploymentCount);
+    }
+
+    /**
+     * Retrieves how many times a failed deployment will be retried before giving up.
+     * @return such information.
+     */
+    protected final int immutableGetRetryFailedDeploymentCount()
+    {
+        return m__iRetryFailedDeploymentCount;
+    }
+
+    /**
+     * Retrieves how many times a failed deployment will be retried before giving up.
+     * @return such information.
+     */
+    public int getRetryFailedDeploymentCount()
+    {
+        @Nullable final int result;
+
+        @Nullable final String property = System.getProperty(Literals.DOCKERFILE_RETRY_FAILED_DEPLOYMENT_COUNT);
+
+        if (property == null)
+        {
+            result = immutableGetRetryFailedDeploymentCount();
+        }
+        else
+        {
+            result = Integer.valueOf(property);
         }
 
         return result;

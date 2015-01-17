@@ -134,8 +134,18 @@ public class Literals
     public static final String DEPLOY_L = "deploy";
 
     /**
+     * String literal: "dockerfile.deploy".
+     */
+    public static final String DOCKERFILE_DEPLOY_L = "dockerfile.deploy";
+
+    /**
      * String literal: "uniqueVersion".
      */
     public static final String UNIQUE_VERSION_L = "uniqueVersion";
+
+    /**
+     * String literal: "dockerfile.uniqueVersion".
+     */
+    public static final String DOCKERFILE_UNIQUE_VERSION_L = "dockerfile.uniqueVersion";
 
 }

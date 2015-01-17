@@ -467,6 +467,51 @@ public class DockerfileMojo
     }
 
     /**
+     * Specifies the classifier.
+     * @param classifier the classifier.
+     */
+    protected final void immutableSetClassifier(@NotNull final String classifier)
+    {
+        m__strClassifier = classifier;
+    }
+
+    /**
+     * Specifies the classifier.
+     * @param classifier the classifier.
+     */
+    public void setClassifier(@NotNull final String classifier)
+    {
+        immutableSetClassifier(classifier);
+    }
+
+    /**
+     * Retrieves the classifier.
+     * @return such information.
+     */
+    @Nullable
+    protected final String immutableGetClassifier()
+    {
+        return m__strClassifier;
+    }
+
+    /**
+     * Retrieves the classifier.
+     * @return such information.
+     */
+    @Nullable
+    public String getClassifier()
+    {
+        @Nullable String result = System.getProperty(Literals.DOCKERFILE_CLASSIFIER);
+
+        if (result == null)
+        {
+            result = immutableGetClassifier();
+        }
+
+        return result;
+    }
+
+    /**
      * Retrieves the layout.
      * @param id the id.
      * @return the layout.
@@ -512,7 +557,8 @@ public class DockerfileMojo
             getTemplate(),
             getEncoding(),
             getDeploy(),
-            getUniqueVersion());
+            getUniqueVersion(),
+            getClassifier());
     }
 
     /**
@@ -558,17 +604,19 @@ public class DockerfileMojo
      * @param encoding the file encoding.
      * @param deploy whether to deploy the Dockerfile or not.
      * @param uniqueVersion whether to use unique versions when deploying the Dockerfile or not.
+     * @param classifier the Dockerfile classifier.
      * @throws MojoExecutionException if the process fails.
      */
     protected void execute(
         @NotNull final Log log,
         @NotNull final String ownVersion,
         @NotNull final MavenProject targetProject,
-        @Nullable final File outputDir,
-        @Nullable final File template,
-        @Nullable final String encoding,
+        @NotNull final File outputDir,
+        @NotNull final File template,
+        @NotNull final String encoding,
         final boolean deploy,
-        final boolean uniqueVersions)
+        final boolean uniqueVersions,
+        @NotNull final String classifier)
       throws MojoExecutionException
     {
         boolean running = false;
@@ -664,7 +712,7 @@ public class DockerfileMojo
                             targetProject.getArtifactId(),
                             targetProject.getVersion(),
                             "",
-                            "Dockerfile");
+                            classifier);
 
                     @NotNull final ArtifactRepository repo =
                         getDeploymentRepository(
